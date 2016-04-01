@@ -1,0 +1,50 @@
+<html>
+<h2>OVERVIEW</h2>
+
+<body>
+Matplotlib is a tool for producing 2D plots in Python. It can make 3D plots, however it was originally designed to be used for 2D plots. It was developed as an open source replace to Matlab's plotting capabilities.
+<br>
+
+<h3>COMPOSITION OF MATPLOTLIB</h3>
+There are three parts to matplotlib ( http://matplotlib.org/users/intro.html)
+<ul>
+<li>pyplot interface</li>
+	This is the main part of matplotlib where we do all the data processing. it contains
+  all the functions we need to manipulate and change parts of a figure.
+	<br>
+  Note that there is also pylab which is almost the same as pyplot. I'm not sure of the 
+  technical differences, but advice on <a href="http://stackoverflow.com/questions/16849483/which-is-the-recommended-way-to-plot-matplotlib-or-pylab
+">Stackoverflow recommends</a> using pyplot only. pylab 
+  is recommended to use for gui-type interfaces. 
+
+
+<li> matplotlib frontend</li>
+  This section of code handles the actual creation and drawing of the figures. Here 
+  we could create our own custom styles of plots and do other drawings if we wish
+
+<li>matplotlib backend</li>
+  This is handles all the conversion to pdf, png, ps, svg, and so on. It is device dependent.
+</ul>
+
+
+<h3>BASIC TERMINOLOGY</h3>
+
+There is a fantastic figure demonstrating the different parts of a figure matplotlib. Original available <a href="http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure">here</a>.<br>
+
+<img src="fig_map.png"><br>
+
+<ul>
+<li>Figure ~ this refers to the entire plotting area.</li>
+<li>Axes ~ this is the region of the plot. A figure can contain many axes</li>
+<li>Axis ~ these are the x,y (or x,z,y) axis of a plot. Related to data limits. Each axes has 2 or 3 axis.</li>
+</ul>
+
+One way to think of this abstraction is that figure refers to the entire area where plotting takes place.
+There can be mutliple plots on a single figure. Each of these multiple plots have an associated "Axes" which
+contains title, labels, and 2/3 axis. The axis of each axes contains information about the data limits.
+
+Unfortunately I find the terminology to be rather confusing. But the picture really helps.
+</body>
+
+
+</html>
