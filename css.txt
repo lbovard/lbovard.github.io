@@ -1,0 +1,13 @@
+CSS (Cascading Style Sheets) is a way of adding formating to a website.
+
+Instead of hard coding all the values into the HTML file, instead it is better to create tags 
+for all the html elements we are interested in and then set the properties of those elements in a single
+file. This means that we only need to change one file to change the location of the website. 
+
+Furthermore, by changing only the .css files we can completely change the look of a website without changing the 
+content. A very useful thing!
+
+
+CSS Class:
+Suppose that we want to have a style that we want to apply to various parts of an HTML document. Since there
+are many types of HTML tags, 
