@@ -68,13 +68,49 @@ Unfortunately I find the terminology to be rather confusing. But the picture rea
 
 <h3>BEST PRACTICES</h3>
 <p>I have found that when I write python scripts to generate plots, I end up needing to do some things later. </p>
-</body>
 
 <h3>LIST OF PLOTS</h3>
 <ul>
 <li> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.bar">bar</a> - plot a 1d bar plot</li>
 <li> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.hist">hist</a> - plot a 1d histogram</li>
 <li> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.hist2d">hist2d</a> - plot a 2d histogram</li>
+<li> <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.imshow">imshow</a> - display an image</li>
 </ul>
 
+
+<h3>AXES SETTINGS</h3>
+<p>These options are always referenced as ax.</p>
+<table style="width:100%">
+ <tr>
+ <td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.tick_params">tick_params</a> - control the tick properties</td>
+ <td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_xlabel">set_xlabel</a> - set the xlabel</td>
+ <td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_ylabel">set_ylabel</a> - set the ylabel</td>
+ <td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_title">set_title</a> - set the title</td>
+ </tr>
+ <tr>
+	<td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_xticks">set_xticks</a> - set the xticks manually, <a href="matplotlib/ticks_examples.html">examples</a></td>
+	<td><a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_yticks">set_yticks</a> - set the yticks manually, <a href="matplotlib/ticks_examples.html">examples</a></td>
+ </tr>
+</table>
+
+
+
+<h3>COLOUR MAPS</h3>
+<p>Colourmaps only assign a colour for a value between 0 and 1. Additionally, you can assign a colour for anything below 0 and anything above 1 and anything that is invalid, e.g. NaNs.</p>
+
+<p>Clearly, all data does not vary between 0 and 1. Thus we need some way of mapping the data to the interval 0 and 1. This is done through a <a href="http://matplotlib.org/users/colormapnorms.html">Norm</a>. There are some basic mappings, but if you want to create a custom one, you must write your Normalize class. There is an example at the bottom of the above page that describes how to do this.</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
 </html>
