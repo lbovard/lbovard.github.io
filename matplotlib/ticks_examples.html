@@ -2,9 +2,11 @@
 <html>
 <head>
 <style>
+h1 { color: #000000; text-align:center;}
 h2 { color: #ff3300; text-align:center;}
 h3 { color: #3366ff; text-align:center;}
 dt { font-weight:bold;}
+code { font-family: monospace; }
 
 body {
 	  font-family: "Helvetica Neue", Helvetica, 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
@@ -13,6 +15,10 @@ body {
     margin: 0px 80px 0px 80px;
 }
 
+img { 
+	display: block;
+	margin: 0 auto;
+}
 
 a:link, a:visited { color: red; }
 </style>
@@ -20,5 +26,38 @@ a:link, a:visited { color: red; }
 </head>
 <body>
 
+<h1>Ticks</h1>
+<h2>Changing the tick marks</h2>
+<p>When we want to change the values of the ticks, we must access the <a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_xticks">set_xticks</a> and <a href="http://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes.set_yticks">set_yticks</a> functions.</p>
+
+<p>In the following code, we change the major tick and minor ticks of a plot.</p>
+<code>
+import matplotlib.pyplot as plt<br>
+<br>
+fig,ax=plt.subplots(1,1)<br>
+ax.plot([1,2,3,10],[2,4,10,40])<br>
+ax.set_xticks([1,2.5,3.5,4,9.6,9.64,9.9,10])<br>
+ax.set_yticks([0,5,9,10,34,39.999])<br>
+plt.show()
+</code>
+<p>This code will produce the following figure</p>
+<img src="tick_test_1.png" height="500" width="650" alt="manually setting the x- and y-ticks"><br>
+<p>Thus we have changed the locations and values of the ticks. However, obviously, they look terrible. 
+
+<h2>Automatically changing the tick marks</h2>
+<p>Instead of doing it ourselves, matplotlib provides a variety of routines to do it for you. A detailed list is <a href="http://matplotlib.org/api/ticker_api.html#tick-locating">here</a>.<br><br>
+<code>
+import matplotlib.pyplot as plt<br>
+import matplotlib.ticker as tk<br>
+<br>
+fig,ax =plt.subplots(1,1)<br>
+ax.plot([1,2,3,4,5,6,7],np.array([1,2,3,4,5,6,7])**2)<br>
+ax.yaxis.set_major_locator(tk.LogLocator(2))<br>
+ax.set_ylim(0,50)<br>
+plt.show()
+</code>
+<p>This produces the following image.</p>
+<img src="autoset_major_ticks.png" height="500" width="650" alt="automatically setting the y-ticks"><br>
+<p>There are a variety of automated ticks and using the <a href="http://matplotlib.org/api/ticker_api.html#matplotlib.ticker.Locator">tick_values()</a> method of the <code>ticket.Locator</code> class, one obtains the list of ticks that would be produced.
 </body>
 </html>
