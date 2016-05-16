@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../mpl_style.css">
+<title>Subplots</title>
+</head>
+<body>
+
+<h1>Subplots</h1>
+<p>A commonly used feature of matplotlib is the ability to create subplots. Fortunately matplotlib provides many ways to do this. Unfortuantely, matplotlib provides many ways to do this. </p>
+
+<p>It is important to recall the figure of how matplotlib is set-up. There is a figure which is the entire plotting area and each plot has a set of axes and hence a figure can have multiple axes. Thus setting up each axes in a way we want is critical. In my opinion, the object-oriented nature of matplotlib is essential to understand the various commands. Unfortunately many example use the default <code>plt.subplot</code>-type styling and while this is good for quick plots, I believe it obscures the nature of the subplotting and also does not generalise well.</p> 
+<h2>add_subplot</h2>
+<p>The first way to add subplots is directly through manipulating the figure object using the <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure.add_subplot">figure.add_subplot</a> option.</p>
+
+<p>In the following code, we show a simple way to create subplots directly from the figure object.</p>
+<code>
+import matplotlib.pyplot as plt<br>
+<br>
+fig=plt.figure() <br>
+ax0=fig.add_subplot(2,2,1)<br>
+ax1=fig.add_subplot(2,2,2)<br>
+ax2=fig.add_subplot(2,2,3)<br>
+ax3=fig.add_subplot(2,2,4)<br>
+plt.show()
+</code>
+<p>This code will produce the following figure</p>
+<img src="subplots_add_subplot.png" height="500" width="650" alt="creating a figure through the add_subplot method of a figure object"><br>
+<p>Thus we have created a 2x2 grid of subplots, labeled ax0 through ax3. From here, we could then control the axes properties directly through the individual axes objects.</p>
+
+<h2>Automatically changing the tick marks</h2>
+</body>
+</html>
