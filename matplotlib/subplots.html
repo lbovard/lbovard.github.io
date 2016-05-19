@@ -28,6 +28,26 @@ plt.show()
 <img src="subplots_add_subplot.png" height="500" width="650" alt="creating a figure through the add_subplot method of a figure object"><br>
 <p>Thus we have created a 2x2 grid of subplots, labeled ax0 through ax3. From here, we could then control the axes properties directly through the individual axes objects.</p>
 
-<h2>Automatically changing the tick marks</h2>
+<h2>subplots_adjust</h2>
+<p> Now that we have subplots, there is the possibility that we want to adjust the spacing between the edge of the subplots and the figure. This can be adjusted through the <a href="http://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure.subplots_adjust">figure.subplots_adjust</a> option. This has 6 options to change, <code>left, right, top, bottom, hspace, wspace</code>.</p>
+
+<p>To illustrate the differences between these, let us remake the above plot changing these options.</p>
+<code>
+import matplotlib.pyplot as plt<br>
+<br>
+fig=plt.figure() <br>
+ax0=fig.add_subplot(2,2,1)<br>
+ax1=fig.add_subplot(2,2,2)<br>
+ax2=fig.add_subplot(2,2,3)<br>
+ax3=fig.add_subplot(2,2,4)<br>
+fig.subplots_adjust(hspace=0.90,wspace=0.0,left=0.0,right=0.99,bottom=0.5,top=0.87)<br>
+plt.show()
+</code>
+<img src="subplots_adjust.png" height="500" width="650" alt="adjusting the change of the padding"><br>
+<p>As we can see, we can finetune the whitespace between the plots. Note that for the <code>top,left,right,bottom</code> are all relative to the origin. This means that <code>right=0.99</code> means the right edge will be at 0.99 of the width along the x-direction. The <code>hspace, wspace</code> are not relative but a different scale. Play around with them to understand how they act.</p>
+
+<p>In this case, the ticks overlap and to fix this we must turn them off. See the page about ticks for information on how to do this.</p>
+
+<p>one should note that if we wanted to adjust only the left column hspace and not the right column hspace, we cannot do this with this set-up. Instead we must use GridSpec which will be discusesd later. </p>
 </body>
 </html>
