@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mpl_style.css">
+<title>MathJax TeX Test Page</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h1>Dimensional Analysis in General Relativity</h1>
+<p>This page contains discussions about dimensional analysis in General Relativity. Note that $G=1, c=1$ are implied unless otherwise specificed.</p>
+<h2>Dimensional arguments of the EFE</h2>
+<p>Being able to quickly do dimensional analysis in GR is important. Here are the key dimensional arguments for the terms in the EFE. </p>
+
+<p>The metric must be dimensionless. This is because we know that are measuring $ds^{2}$ which has units of $L^{2}$ and the metric component are simply coefficients in front of the $dx^{i}dx^{j}$ terms. Thus the metric is always dimensionless</p>
+$$g \sim  1.$$
+<p>Now the Christoffel symbols involve $\sim g,\partial g$ and thus we immediately have that </p>
+$$\Gamma \sim L^{-1}.$$
+<p>The Riemann curvature tensor is a function of $\sim \partial \Gamma$ so thus we immediately have that</p>
+$$Riemann \sim L^{-2}.$$
+<p>Alternatively, the way to remember this is that $Riemann \sim \nabla_{[u}\nabla_{v]}$ where each covariant derivative introduces a $L^{-1}$ term.</p>
+<p>It now follows immediately that the Ricci tensor and scalar are also $L^{-2}$ since they only involve contractions.</p>
+$$Ricci \sim L^{-2}.$$
+<p>Now using this information we can immediately recover the units of $\Lambda$ since it appears in the EFE</p>
+$$\Lambda  \sim L^{-2}.$$
+<p>With this information we can also compute the Kretschmann scalar, $K\sim Riemann^{2}$, in Schwarzschild. The following is not a rigorous argument and merely a trick to remember the answer. </p>
+<p> We recall that the $g_{tt}$ component, goes as $r^{-1}$ as $r\rightarrow 0$. Riemann is formed from second derivatives of $g_{tt}$, so we have that $Riemann \sim r^{-3}$ which leads to the Kretschmann behaving as</p>
+$$K \sim r^{-6}.$$
+
+<h2>Dimensional analysis of GW</h2>
+<p>The argument from my notes should go here. With citations.</p>
+</body>
+</html>
+
