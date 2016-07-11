@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="mpl_style.css">
-<title>MathJax TeX Test Page</title>
+<title>Dimensional Analysis in GR</title>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
@@ -28,11 +28,25 @@ $$Ricci \sim L^{-2}.$$
 <p>Now using this information we can immediately recover the units of $\Lambda$ since it appears in the EFE</p>
 $$\Lambda  \sim L^{-2}.$$
 <p>With this information we can also compute the Kretschmann scalar, $K\sim Riemann^{2}$, in Schwarzschild. The following is not a rigorous argument and merely a trick to remember the answer. </p>
-<p> We recall that the $g_{tt}$ component, goes as $r^{-1}$ as $r\rightarrow 0$. Riemann is formed from second derivatives of $g_{tt}$, so we have that $Riemann \sim r^{-3}$ which leads to the Kretschmann behaving as</p>
-$$K \sim r^{-6}.$$
+<p> We recall that the $g_{tt}$ component, goes as $GM/(rc^{2})$ as $r\rightarrow 0$. Riemann is formed from second derivatives of $g_{tt}$, so we have that $Riemann \sim GM/(cr^{-3})$ which leads to the Kretschmann behaving as</p>
+$$K \sim \frac{G^{2}M^{2}}{c^{4}r^{6}} \sim \frac{M^{2}}{r^{6}}.$$
+<p>The correct answer is</p>
+$$ K = \frac{48M^{2}}{r^{6}}.$$
 
 <h2>Dimensional analysis of GW</h2>
 <p>The argument from my notes should go here. With citations.</p>
+
+<p>We want to find out the behaviour of the power released in gravitational waves. We start by recalling that power has the units of</p>
+$$P \sim ML^{2}T^{-3},$$
+<p>but we since we are in dimensionless units where</p>
+$$ L = M = T,$$
+<p>and thus we really have that power is dimensionless</p>
+$$ P \sim 1.$$
+<p>It can be shown that the power should depend on the quadropole moment</p>
+$$Q \sim ML^{2} \sim T^{3}$$.
+<p>So if we want to get a dimensionless quantity, we must take the third derivative with respect to time. The reason for choosing time is that we know that moving objects emit raditation and the time derivative tells us how the quadropole moment is changing. Furthermore, we also know that the quadropole moment is a tensor and that power is a scalar. The simplest quantity we can make from a rank 2 tensor is the square of itself and hence we iummediately obtain</p>
+$$P \sim \
 </body>
+
 </html>
 
