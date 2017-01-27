@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Structure of stablty binary neutron star merger remnants</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Structure of stable binary neutron star merger remnants: A case study</h3> 
+<p><a href="https://arxiv.org/abs/1607.02186">arxiv link</a> - published in PRD</p>
+<p>This paper studies the remanant of a BNS merger and analyses the properties of the remanant. </p>
+
+<p>This paper uses the SHT EOS and has initial masses of 1.4 $M_{\odot}$, uses the WhiskyThermal code, no magnetic fields, and no neutrino transport.</p>
+
+<p>To study the deformations, they use a different coordinate system in an attempt to remove the gauge-dependent effects.</p>
+
+<p>Another point they address is the use of an alternative way for defining the bulk. Because defining a radius is difficult in GR, they propose using a coordinate independent definition of the mass by looking at surfaces of constant baryon mass density. In integral forms these are</p>
+$$ V(\rho') = \int_{\rho'}^{\infty} \int_{A(\rho)}dV,\\
+M_{b}(\rho') = \int_{\rho'}^{\infty} \int_{A(\rho)}W\rho dV,$$
+
+<p> where $dV$ is the proper 3-volume, $A(\rho)$ is the proper isodensity surface of rest-mass density, $W$ is the Lorentz factor. To evaluate these integrals, they do the following. They take all the cells - ensuring that different refinement levels are properly considered - and then make a cumulative histogram with the density versus total mass. So to compute the mass, a given density is given and all values above that density are counted to give the mass. Likewise, once a density has been selected, the volume is easy to compute the same way. Thus for a given density, the mass and volume are given. From here they define the volumetric radius as $R_{V} = 4\pi R_{V}^{3}/3$. From here they define the compactness as $C_{V} = M_{b} / R_{v}$ which will be a function of density. To define the bulk, they simply select the maximum of this value.</p>
+
+
+<!--
+$$ ds^{2} = -e^{2\nu}dt^{2} + \left(1-\frac{2m(r)}{r}\right)dr^{2} + r^{2}d\Omega^{2}$$
+<p> and a perfect fluid. Plugging in one obtains the TOV equations. From there a radial perturbation is done 
+of the form<p>
+$$\delta r(r,t) = X(r)e^{i\omega t}$$
+<p> which when plugged into the equations (expanded out?? clarify!) yields a complicated differential equation
+for $X(r)$. It turns out that the equation can be transformed into  a Sturm-Liouville problem which means that 
+$\omega^{2}$ eigenvalues are real and distinct. Furthermore, they form an ordered sequence. Additionally, the
+eigenfunctions exist and form a basis. <p>
+
+<p>The goal is to solve the complicated boundary value problem for the eigenvalues and eigenmodes and analyse the
+results. This is done in two ways: 1) the shooting method  2)finite differencing of the derivatives and solving
+the resulting matrix problem.</p>
+
+<p>Coupled to this, they use a whole list of EOS, but most prominently the APR1 and a few polytropes $(n=0.5,0.8,1.0)$. They 
+find that the major limitation of the numerical accurary is due to the interpolation of the EOS table which results in errors
+of about 3% when using different types of interpolation.</p>
+</p>
+-->
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radial oscillations of relativistic stars</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Radial oscillations of relativistic stars</h3> 
+<p><a href="  http://dx.doi.org/10.1051/0004-6361:20000216 ">DOI link</a></p>
+<p>This paper does a simple analysis of the radial oscillations of a non-rotating neutron star.</p>
+<p>To proceed they start with the standard spherical metric for a spherically symmetric star</p>
+$$ ds^{2} = -e^{2\nu}dt^{2} + \left(1-\frac{2m(r)}{r}\right)dr^{2} + r^{2}d\Omega^{2}$$
+<p> and a perfect fluid. Plugging in one obtains the TOV equations. From there a radial perturbation is done 
+of the form<p>
+$$\delta r(r,t) = X(r)e^{i\omega t}$$
+<p> which when plugged into the equations (expanded out?? clarify!) yields a complicated differential equation
+for $X(r)$. It turns out that the equation can be transformed into  a Sturm-Liouville problem which means that 
+$\omega^{2}$ eigenvalues are real and distinct. Furthermore, they form an ordered sequence. Additionally, the
+eigenfunctions exist and form a basis. <p>
+
+<p>The goal is to solve the complicated boundary value problem for the eigenvalues and eigenmodes and analyse the
+results. This is done in two ways: 1) the shooting method  2)finite differencing of the derivatives and solving
+the resulting matrix problem.</p>
+
+<p>Coupled to this, they use a whole list of EOS, but most prominently the APR1 and a few polytropes $(n=0.5,0.8,1.0)$. They 
+find that the major limitation of the numerical accurary is due to the interpolation of the EOS table which results in errors
+of about 3% when using different types of interpolation.</p>
+</p>
+</body>
+</html>
+

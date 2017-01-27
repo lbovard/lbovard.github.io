@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 001</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Multiples of 3 and 5</h3> 
+<p><a href="https://projecteuler.net/problem=1">pe link</a> </p>
+<p>This problem is very simple using the <a href="https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle">inclusion and exclusion principle</a>. We simply count all the multiples of 3, all the multiples of 5, and then subtract the multiples of 3 & 5. Translated into a formula, this becomes,</p>
+$$S = 3\sum_{i=1}^{\lfloor 999/3\rfloor} i+ 5\sum_{i=1}^{\lfloor 999/5\rfloor} i- 15 \sum_{i=1}^{\lfloor 999/15\rfloor} i, $$
+
+<p>  which can further be simplified because </p>
+
+$$ \sum_{i=1}^{n}i = \frac{n(n+1)}{2}.$$
+
+<p> The solution is now easy to code.</p>
+
+</body>
+</html>
+
