@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digit sum</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Digit sum</h3> 
+<p>An often requested problem in programming contests is the digit sum. For most purposes, the following code works very well.</p>
+
+<p>The algorithm is simply noticing that the last digit is always $a\mod10$ and then dividing by 10 to remove the last digit.</p>
+<pre><code>
+int digsum(int a) {
+  // return the sum of the digits base 10
+  int s=0;
+  while(a>0) {
+    s+=a%10; a/=10;
+  }
+  return s;
+}<br> 
+</code></pre>
+</body>
+</html>
+

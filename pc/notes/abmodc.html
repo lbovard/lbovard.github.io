@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ab mod c</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>ab mod c</h3> 
+<p>Computing $ab\bmod c$ is a common operation in cryptography where $a,b$ are typically large and $p$ is some prime. For example if we want to compute $a^{b} \bmod p$, this in principle reduces to $aa \bmod p$ when using exponentiation by squaring. Thus have a robust way of computing $ab\bmod c$ is useful.</p>
+
+<p>In what follows, a simple algorithm will be developed which should be sufficient for most cases. Note we assume that $a,b\le c$ otherwise we would mod them to be in the correct range. The idea is to exploit the binary representation of the second number $b$.<p>
+
+<p>Note that</p>
+
+$$ab = a\sum_{i=0}^{N}b_{i}2^{i}$$
+
+<p>and thus we only ever need to mulitply by $2$ since</p>
+
+$$a2^{i} \bmod p = ((2a)2)\ldots2)\bmod p = ((2a)\bmod p)2\bmod p)\ldots 2\bmod p)$$
+
+<p>so we simply need to keep track of a variable $t=2t\bmod p$ where $t=a$ initially. Additionally, because $a\le c$, if $2a > c$ then $2a\bmod c = 2a-c$  otherwise if $2a < c$ then $2a \bmod c = 2a$. </p>
+
+<p> The following code computes $ab\bmod c$ using the above idea. Since these are 64-bit unsigned integers, the largest possible value is $2^{64}-1$ and in order to avoid overflow, we must have that $a,b \le 2^{63}-2$ since $2a$ must fit in a 64-bit unsigned integer. This seems wrong, but testing fails with $a=2^{63}-1$ although $2a=2^{64}-2$ so likely there is a bug when the values are really close to the maximum integer.</p>
+<pre>
+<code>
+uint64 cmod(uint64 a, uint64 b, uint64 c) {
+  uint64 r=0;
+  uint64 y=a;
+  uint64 t;
+  while(b) {
+    if(b&1) {
+      t=r+y;
+      r=(t>c) ? t-c : t;
+    }
+    t=y<<1;
+    y=(t>c) ? t-c : t;
+    b>>=1;
+  }
+  return r; 
+}
+
+</code>
+</pre>
+
+<h3>Montgomery multiplication</h3>
+<p>During cryptographic computations, $ab\bmod p$ may need to be repeated a large number of times for different $a,b$ but the same $p$. Here a technique called <a href="https://en.wikipedia.org/wiki/Montgomery_modular_multiplication">Montgomery multiplication</a> is useful. The idea is to introduce a further value, $R$ and then compute the Montgomery form $aR\bmod p$. Through this a special algorithm is used to multiply $a,b$ in Montgomery form and then reduced back to their original form. For further details, see Wikipedia or Chapter 14 of the Handbook of Applied Cryptography.</p>
+</body>
+
+</html>
+
