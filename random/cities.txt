@@ -1,0 +1,33 @@
+Countries that I have visited:
+ - Canada (native)
+ - England
+ - France
+ - Germany
+ - Italy
+ - Portugal
+ - Sweden
+ - Switzerland
+ - Turkey
+ - USA
+
+Cities I have visited: 
+Canada: 
+  Vancouver (hometown), Victoria, Penticton, Kelowna, Calgary, Edmonton, Toronto, Waterloo (lived), Ottawa, Montreal, Quebec City, Halifax, Jonquière
+England:
+  London, Oxford
+Germany: 
+  Berlin, Darmstadt, Frankfurt (lived), Heidelberg, Mainz, München, Nürenberg, Stuttgart, Tübingen, Wiesbaden
+Italy:
+  Rome, Venice, Padua, Florence
+France:
+  Paris
+Portugal:
+  Coimbra, Lisbon
+Sweden:
+  Stockholm
+Switzerland:
+  Basel
+Turkey:
+  Istanbul
+USA:
+  Seattle, Portland, Los Angeles, Raleigh, Washington DC, New York City, Chicago  
