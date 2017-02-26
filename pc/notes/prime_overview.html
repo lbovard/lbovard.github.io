@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prime generation</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Generating primes</h3> 
+<p>The generation of primes is used a lot in programming contests. Furthermore, it is used a lot in general number theory, so knowing how to generate them quickly is an important tool to have.</p>
+
+<p>An important first step in the generation of primes is to note that to check primality of a number $x$ we only need to check up to $\sqrt{x}$. Using a square root involves floating point and we would like to avoid that, so instead of checking up to $\sqrt{x}$ is simply faster to check up to $i*i \le n$.</p>
+
+<p> </p>
+$$$$
+
+
+<h3>Prime counting function</h3> 
+<p>The prime counting function $\Pi(x)$ is a very useful function as it tells us how many primes there are that are $\le x$. A very important mathematical result, the <a href="https://en.wikipedia.org/wiki/Prime_number_theorem">prime number theorem</a>, states that
+</p>
+
+$$ \Pi(x) \sim \frac{x}{\log x}.$$
+
+<p>Some exact values that are useful in programming contests are</p>
+
+$$\begin{array}{c|c|c}
+N & N^{2} &\Pi(N) \\ \hline
+1000 & 10^{6} & 168 \\
+10000 & 10^{8} &1229\\
+\sim 46341 & 2^{31}-1 & 4792
+\end{array}$$
+
+<h3>Prime factorisation</h3>
+<p>As can be seen, there aren't many primes for small values of $N$, and since prime factorisation is used a lot, an efficient algorithm for relatively small values of $N$ is good to have handy. For small values it is sufficient to simply pre-compute all the values to avoid needing to generate the primes.</p>
+</body>
+</html>
+

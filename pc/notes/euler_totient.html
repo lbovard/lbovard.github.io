@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Euler Totient Function</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Euler Totient Function</h3> 
+<p>The <a href="https://en.wikipedia.org/wiki/Euler%27s_totient_function">Euler totient function</a>, $\varphi(n)$, counts the number of integers that are coprime to a given number $n$. There are many identities and properties of this function that are found in any standard introductory number theory book, but the standard identity is Euler's product formula</p>
+$$\varphi(n) = n\prod_{n\vert p}\left(1-\frac{1}{p}\right).$$
+
+<p>Another useful property is that $\varphi(n)$ is a <a href="https://en.wikipedia.org/wiki/Multiplicative_function">multiplicative function</a>. This means that </p>
+$$\varphi(mn)=\varphi(m)\varphi(n) \text{ if } \gcd(n,m)=1.$$
+<p>Multiplicative functions are everywhere in number theory and worthy of greater study. Another property of $\varphi(n)$ is </p>
+$$\varphi(p^{k}) = p^{k-1}(p-1).$$
+<p>Using these two facts, we can quickly compute $\varphi(n)$ if we have a list of all primes $\le \sqrt{n}$. To illustrate, let us consider $n=104823$</p>
+
+\begin{align}\varphi(104823) & = \varphi(3^2 * 19 * 613) \\
+& = \varphi(3^2) \varphi(19)  \varphi(613) \\
+& = 3*2 * 18 * 612 \\
+& = 66096\end{align} 
+
+<p>Thus as long as we can get the prime factorisation of the number, we can immediately compute the Euler totient.</p>
+
+<pre>
+<code>
+int phi(int k) {
+  int i=0;
+  int f=1,pc=0;
+  /* find all prime factors */
+  while(p[i]*p[i]<=k) {
+    pc=0;
+    while(k%p[i]==0) {
+      k/=p[i];
+      pc++;
+      /* computes p^k */
+      f*=p[i];
+    }
+    /* need to compute p^(k-1)(p-1) */
+    if(pc>0) {
+      /* remove factor of p*/
+      f/=p[i];
+      f*=(p[i]-1);
+    }
+    i++;
+  }
+  /* 
+    get potential prime factor that is greater than sqrt(MAX)
+    only one since sqrt(MAX)^2 >= MAX 
+  */
+  if(k!=1) {
+    f*=(k-1);
+  }
+  return f;
+</code>
+</pre>
+</body>
+
+</html>
+

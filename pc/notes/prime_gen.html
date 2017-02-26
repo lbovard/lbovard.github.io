@@ -11,31 +11,98 @@
 </head>
 <body>
 <h3>Generating primes</h3> 
-<p>The generation of primes is used a lot in programming contests. Furthermore, it is used a lot in general number theory, so knowing how to generate them quickly is an important tool to have.</p>
-
 <p>An important first step in the generation of primes is to note that to check primality of a number $x$ we only need to check up to $\sqrt{x}$. Using a square root involves floating point and we would like to avoid that, so instead of checking up to $\sqrt{x}$ is simply faster to check up to $i*i \le n$.</p>
 
-<p> </p>
-$$$$
+<h3>Simple approach</h3>
+<p>So as a first approach let us create a boolean array to compute primes up to the number <code>MAX</code>.</p>
 
+<pre>
+<code>
+int N=MAX/2-1;
+// hold the boolean values, 0 is prime, 1 is composite
+char *a=malloc((N+1)*sizeof(char));
+int i,k,p;
+for(i=0;i*i< N;i++) {
+  if(a[i]==0) {
+    p=(2*i+3); k=p;
+    while((i+k) < N) {
+      a[i+k]=1; k+=p;
+    }   
+  }   
+} 
+</code>
+</pre>
 
-<h3>Prime counting function</h3> 
-<p>The prime counting function $\Pi(x)$ is a very useful function as it tells us how many primes there are that are $\le x$. A very important mathematical result, the <a href="https://en.wikipedia.org/wiki/Prime_number_theorem">prime number theorem</a>, states that
-</p>
+<p>The idea is that the array <code>a[i]</code> corresponds to the value $2i+3$. We then sieve and remove all multiples of $2i+3$. This code is quite fast, but there is a very glaring oversight. The array <code>a</code> is of type <code>char</code> which ranges from $0-255$ while we only need a single bit. Thus for every char we could, in principle, be using all $8$ bits.</p>
 
-$$ \Pi(x) \sim \frac{x}{\log x}.$$
-
-<p>Some exact values that are useful in programming contests are</p>
-
-$$\begin{array}{c|c|c}
-N & N^{2} &\Pi(N) \\ \hline
-1000 & 10^{6} & 168 \\
-10000 & 10^{8} &1229\\
-\sim 46341 & 2^{31}-1 & 4792
+<h3>Bit optimisation</h3>
+<p>Consider an array of  unsigned 32-bit integers $a[n]$. Now suppose we want to find the $i$th bit. Clearly we must first find $i/32$ which will tell us which entry of $a[n]$ we need. Then we need the $i\bmod 32$ bit. With these two pieces of information, we need to be able to see whether the bit is $0$ or $1$ (which we will call <code>chkC</code>) and set the bit to $1$ (which we will call <code>setC</code>). Now when we are looping over the index $i$ the value of it represents is actually either $2i+3$, $2i+1$, or $i/2$ depending on how we want to do the loop. To take advantange of bithacking tricks, let us set-up the following correspondence</p>
+$$\begin{array}{c|c|c|c}
+i & k=\lfloor i/2 \rfloor & \lfloor k/32 \rfloor & \lfloor k \rfloor \%32 \\ \hline
+3 & 1 & 0 & 1\\
+5 & 2 & 0 & 2\\
+7 & 3 & 0 & 3\\
+9 & 4 & 0 & 4 \\
+\vdots&\vdots & \vdots & \vdots\\
+91 & 45 & 1 & 13
 \end{array}$$
+<p>so the code follows as </p>
+<pre>
+<code>
+for(i = 3; i <= PMAX; i += 2) { //loop over the odd numbers
+  k = floor(i/2)
+  if( k is prime ) 
+    for(j=i*i; j< MAX; j+=2*i ) 
+      flag j bit
+}
+</code>
+</pre>
+<p>The inner for loop has a good trick. Since we want to loop over all primes $p$, we only need to start at $p^{2}$ since $p,3p,\ldots,(p-2)p$ would all have been covered in previous cases. Furthermore, we only need to remove every second value since $p^{2}$ is odd, adding $p$ will result in an even number which is not prime, so we can skip it. </p>
 
-<h3>Prime factorisation</h3>
-<p>As can be seen, there aren't many primes for small values of $N$, and since prime factorisation is used a lot, an efficient algorithm for relatively small values of $N$ is good to have handy. For small values it is sufficient to simply pre-compute all the values to avoid needing to generate the primes.</p>
+<p>Now how do we determine if $p$ is prime? This is what we denote as <code>chkC</code>. The macro is as follows </p>
+<code>#define chkC(a,i) (a[i>>6] & (1<<((i>>1)&31)))</code>
+<p> here $a[x]$ is an array of unsigned 32-bit integers. <code>i>>6</code> is simply $\lfloor i/2/32\rfloor$, so <code>a[i>>6]</code> is just telling us which entry to look at. The next part is <code>(i>>1)&31</code>. The <code>i<<1</code> is just $\lfloor i/2\rfloor$ while <code>&31</code> is getting the answer $\bmod 32$. To see why, $31$ is 11111$ in binary and the <code>&</code> will give us the last 5 bits. <code>(i>>1)&31</code> is just a number between $0$ and $31$, call it $l$. Now we have <code>1<< l</code> which is simply making a string with a $1$ at the $l$th bit. Finally, we <code>&</code> with the <code>a[i>>6]</code> which, because <code>1<< l </code> is a single bit, if the $l$th bit of <code>a[i>>6]</code> is $0$ then the answer is $0$ otherwise it is some number. Since we initalise everything to $0$, we will take the bit set to $0$ to be a prime. Thus the prime checking function becomes</p>
+<code>
+if(!chkC(a,k))
+</code>
+<p>Now we need to flag the $m=\lfloor j/2 \rfloor$ bit. This is easy given what we know. <code>chkC</code> already tells us how to check for the mth bit, but now  we want to set it. When this code is executed, we already know that the mth bit is $0$ because of the sieve. Thus from before <code> (1<<((i>>1)&31)))</code> will gives us an integer such that the $m\bmod 32$th bit is set to 1 and all others are 0. We want to set the bit in $a$ to be $1$ and we know that <code>0|1=1</code> so if we or we can set the desired bit. Since this number is just a single $1$ all others are $0$ and we are okay. We call this function <code>setC</code> which is</p>
+<code>
+#define setC(a,i) (a[i>>6] |= (1<<((i>>1)&31)))
+</code>
+<p>Putting everything together we obtain the following code</p>
+<pre>
+<code>
+#define MAX 1000000000 //find primes up to this number
+#define SQRMAX 31622 //the sqrt(MAX)
+#define NPRIMES 5000 //should be given based the limits
+
+#define chkC(a,i) (a[i>>6] & (1<<((i>>1)&31)))
+#define setC(a,i) (a[i>>6] |= (1<<((i>>1)&31))) 
+
+unsigned a[MAX/64],primes[NPRIMES];
+void sieve() {
+  unsigned i, j, k;
+  for(i=3; i< SQRMAX; i+=2)
+    if(!chkC(a, i)) {
+      for(j=i*i, k=i<<1; j< MAX; j+=k) {
+        setC(a, j);
+      }
+    }
+  primes[0]=2;
+  j=1;
+  for(i=3; i< MAX; i+=2) {
+    if(!chkC(a, i)) {
+      primes[j] = i;
+      j++;
+    }
+  }
+} 
+</code>
+</pre>
+
+
+<h3>Sources</h3>
+<p>I did not come up with any of the above algorithms. The sieve is called the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a> and is ancient. The source of the bit hacking tricks are unknown to me. Researching fast prime generation online shows that many people have copy-and-pasted the <code>chkC,setC</code> macros  as well as the sieve loops, so they are well known. I also don't see how they can be improved very much. The code is so small that it's hard to create a unique algorithm.</p>
 </body>
 </html>
 
