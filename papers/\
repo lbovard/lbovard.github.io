@@ -60,7 +60,7 @@ th {
   </tr>
   <tr>
     <td>2016</td><td><a href="https://arxiv.org/abs/1603.01918">Sekiguchi et al.</a></td>
-    <td>GR, SpeC</td><td>NS-NS</td><td>SFHo, DD2 (table)</td><td>$1.25-1.45 M_{\odot}, q=0.86-1.0$</td><td>yes</td><td>no</td><td>$10^{-3}-10^{-2} M_{\odot}$</td>
+    <td>GR, SpeC</td><td>NS-NS</td><td>SFHo, DD2 (table)</td><td>$1.25-1.45 M_{\odot}, q=1$</td><td>yes</td><td>no</td><td>$10^{-3}-10^{-4} M_{\odot}$</td>
     <td>no</td><td>no</td><td>have $Y_{e}$ vs mass plots</td>
   </tr>
 
@@ -72,7 +72,7 @@ th {
   </tr>
   <tr>
     <td>2015</td><td><a href="https://arxiv.org/abs/1510.06398">Foucart et al.</a></td>
-    <td>GR, SpeC</td><td>NS-NS</td><td>LS220,SFHo, DD2 (table)</td><td>$1.2 M_{\odot}, q=1, r_{sep}=35 \text{ km}$</td><td>yes</td><td>no</td><td>$10^{-4}-10^{-3} M_{\odot}$</td>
+    <td>GR, SpeC</td><td>NS-NS</td><td>LS220,SFHo, DD2 (table)</td><td>$1.2 M_{\odot}, q=1, r_{sep}=35 \text{ km}$</td><td>yes</td><td>no</td><td>$10^{-3}-10^{-4} M_{\odot}$</td>
     <td>no</td><td>no</td><td>compare eos</td>
   </tr>
   <tr>

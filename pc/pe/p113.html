@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 113</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Non-bouncy numbers</h3> 
+<p><a href="https://projecteuler.net/problem=113">pe link</a> </p>
+<p>This problem asks to find non-bouncy numbers, where a non-bouncy number is defined to be a number in which its digits are either increasing or decreasing left-to-right. For example, $134468$ is increasing, while $66420$ is decreasing, and $1111$ satisfies both criteria.</p>
+
+<p>There are two solutions, one using recursion, and the other using combinatorics. I prefer the recursion solution, although the combinatorics solution is cleaner and provides an exact answer.</p>
+
+<h4>Recursive Solution</h4>
+
+<p>Denote by $f(n,k)$ the number of increasing numbers with $k$-digits and $n$ being the first digit. It is easy to see that the following criteria hold</p>
+\begin{align}
+f(0,k) &= 0,\\
+f(j,k) &= \sum_{i=j}^{9} f(i,k-1).
+\end{align}
+<p> In other words, if add another digit to a $k$ digit number, say $3$, all numbers of $k$ digits that begin with $3$ can be added. Likewise, let us define $g(n,k)$ be the number of decreasing numbers with $k$-digits and $n$ begin the first digit. It is easy to see that </p> 
+\begin{align}
+g(0,k) &= 1,\\
+g(j,k) &= \sum_{i=0}^{j} g(i,k-1).
+\end{align}
+<p>Here the $g(0,k)=1$ since the last digits can always be $0$ so we have to ensure that we count them. The only additional piece is to remove the numbers that are counted twice, i.e. numbers of the form $11111$. This is easy to enumerate as $9k$ since there are only $9$ possible $k$-digit numbers that satisfiy the criteria, $9$ $k-1$-digit numbers, and so on. Thus the solution is of the form</p>
+$$ T(k) = \sum_{j=1}^{k}\sum_{i=1}^{9}f(i,j) + \sum_{j=1}^{k}\sum_{i=1}^{9}g(i,j) - 9k.$$
+<h4>Combinatorics Solution (improve)</h4>
+
+<p>The cobminatorics approach is to count the number of ways we can arrange $k$ digits such that they are always increasing. This can be written as </p>
+$$\binom{9+k}{k}-1.$$
+<p> Decreasing as </p>
+$$\binom{10+k}{k}-1-k.$$
+<p> and likewise we need to remove the duplicates which are $9k$ as before. Thuis the solution is
+$$\binom{10+k}{k}+\binom{9+k}{k} - 2 - 10k.$$
+
+</body>
+</html>
+
