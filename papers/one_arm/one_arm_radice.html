@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>One-Armed Instability</title>
+<style> 
+img{ 
+.box {
+    width:600px;
+    text-align:center;
+    margin:auto;
+}
+img {
+    margin:5px;
+}
+}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+
+<body>
+<h3>The One-Armed Spiral Instability in Neutron Star Mergers and its Detectability in Gravitational Waves</h3>
+<p><i>2016 - Radice, Bernuzzi, Ott</i></p>
+<p><a href="https://doi.org/10.1103/PhysRevD.94.064011">DOI</a>, <a href="https://arxiv.org/abs/1603.05726">arXiv</a></p>
+<p>This short paper analyses the one-arm instability in binary neutron star mergers and the detectability of the GWs. They study two mergers with $M=1.35M_{\odot}$ using SLy (soft) and MS1b (stiff) polytropic equations of state. The initial separation was $50$ km. </p>
+
+
+<p>They use a standard modal decomposition of the density in the $xy$-plane as </p>
+$$P_{m} = \int \rho W e^{-im\phi}\sqrt{\gamma}dxdy,$$
+<p> where $\rho$ is the rest-mass density, $W$ is the Lorentz factor, $\gamma$ is the determinant of the three-metric.  However later, GWs are used to show unambiguously the results.</p>
+
+<div style="text-align: center;">
+<img src="radice01.png" height="300" width="450" alt="eos1" align="middle" />
+<img src="radice02.png" height="300" width="450" alt="eos2" align="middle" />
+<p>The evolution of the density modal decomposition for the MS1b and SLy EOS. All modes saturate after about $10$ ms.</p>
+</div>
+<p>As can be seen, for the MS1b the $m=1$ mode is the largest for later times after about $10$ ms. However for the SLy $m=2$ dominates. In order to measure how effective these modes are, the gravitational waves are required. Defining the luminosity and angular momentum as</p>
+$$L_{GW} = \frac{1}{16\pi } |\dot{h}_{lm}|^{2}, \dot{J}_{GW} = \frac{m}{16\pi}\Im(h_{lm}\dot{h}_{lm}^{*})$$
+
+<div style="text-align: center;">
+<img src="radice03.png" height="300" width="450" alt="eos1" align="middle" />
+<img src="radice04.png" height="300" width="450" alt="eos2" align="middle" />
+<p>The evolution of gravitational wave luminosity.</p>
+</div>
+<p> As can be seen for the MS1b, the high resolution runs show that the $m=1$ dominates at later times. Also, this mode does not undergo any damping compared with the $m=2$ mode. Calculation shows that $J/(2\dot{J}_{GW})> 100$ s for $m=1$.
+</body>
+</html>
+
