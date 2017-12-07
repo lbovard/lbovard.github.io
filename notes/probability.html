@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mpl_style.css">
+<title>Coupon collector's problem</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h1>Coupon's Collector Problem</h1>
+<p>The coupon collector's problem is the following problem: suppose a company
+is offering $N$ coupons in a giveaway in a maga. The probability of recieving
+any coupon is equal, i.e. $p=1/N$. What is the expected number of coupons we
+must collect before we obtain all $N$ coupons?</p>
+
+<p>We need to find the expected value of getting the $i$th coupon. Suppose, for
+now, that the probability of finding the $i$th coupon is $p_{i}$. What is the
+probability of finding the coupon on the $k$th attempt? It is clear that this
+is $(1-p_{i})^{k-1}p_{i}$, i.e. the first $k-1$ attempts all fail, and it
+succeeds on the $k$th. This is the geometric distribution. So to find the
+expected number, we need to compute</p>
+$$E(p) = \sum_{k=1}^{\infty}k(1-p_{i})^{k}p_{i} = \frac{1}{p_{i}}.$$
+</body>
+
+</html>
+

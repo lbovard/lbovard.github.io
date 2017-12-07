@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>My Library</title>
+    
+<script>
+
+var i=0;
+var Library = { 
+  "Joseph Boyden" : [
+  { "title" : "Three Day Road" , "read" : true},
+  { "title" : "Through Black Spruce" , "read": true},
+  { "title" : "The Orenda", "read": true }
+  ],
+  "Truman Capote" : [
+  { "title" : "Breakfast at Tiffany's", 'read': true}
+  ],
+  "Susanna Clarke": [
+  { "title" : "Jonathan Strange and Mr Norrell", 'read' : true},
+  { "title" : "The Ladies of Grace Adieu and Other Stories", 'read' : true}
+
+  ]
+}
+
+document.write("<ul>"); 
+for(x in Library) { 
+  document.write("<li>");
+  document.write("<b>" + x + "</b>") 
+  document.write("<ul>");
+  for(i=0; i<Library[x].length;i++ ) { 
+    if( Library[x][i].read == true) {
+      document.write("<li>" + Library[x][i].title + "</li>");
+    } else {
+      document.write("<li>" + Library[x][i].title + "</li>");
+    }
+  }
+  document.write("</ul>");
+  document.write("</li>"); 
+}
+document.write("</ul>");
+
+</script>
+ 
+</head>
+
+<body>
+</body>
+  
+</html>

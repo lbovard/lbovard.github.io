@@ -1,33 +1,45 @@
 Countries that I have visited:
+ - Belgium
  - Canada (native)
  - England
  - France
  - Germany
  - Italy
+ - Poland
  - Portugal
+ - Spain
  - Sweden
  - Switzerland
  - Turkey
+ - Ukraine
  - USA
 
 Cities I have visited: 
+Belgium:
+  Brussels
 Canada: 
   Vancouver (hometown), Victoria, Penticton, Kelowna, Calgary, Edmonton, Toronto, Waterloo (lived), Ottawa, Montreal, Quebec City, Halifax, Jonquière
 England:
-  London, Oxford
+  Birmingham, London, Oxford
 Germany: 
   Berlin, Darmstadt, Frankfurt (lived), Heidelberg, Mainz, München, Nürenberg, Stuttgart, Tübingen, Wiesbaden
 Italy:
-  Rome, Venice, Padua, Florence
+  Florence, Padua, Rome, Trento, Venice
 France:
   Paris
+Poland:
+  Krakow, Warsaw
 Portugal:
   Coimbra, Lisbon
+Spain:
+  Barcelona
 Sweden:
   Stockholm
 Switzerland:
   Basel
 Turkey:
   Istanbul
+Ukraine:
+  Kiev
 USA:
-  Seattle, Portland, Los Angeles, Raleigh, Washington DC, New York City, Chicago  
+  Chicago, Lansing, Los Angeles, New York City, Portland, Raleigh, Seattle, Washington DC
