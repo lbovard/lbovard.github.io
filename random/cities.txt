@@ -3,6 +3,7 @@ Countries that I have visited:
  - Canada (native)
  - England
  - France
+ - Finland
  - Germany
  - Italy
  - Poland
@@ -21,12 +22,14 @@ Canada:
   Vancouver (hometown), Victoria, Penticton, Kelowna, Calgary, Edmonton, Toronto, Waterloo (lived), Ottawa, Montreal, Quebec City, Halifax, Jonquière
 England:
   Birmingham, London, Oxford
+Finland: 
+  Helsinki, Ivalo
+France:
+  Paris
 Germany: 
   Berlin, Darmstadt, Frankfurt (lived), Heidelberg, Mainz, München, Nürenberg, Stuttgart, Tübingen, Wiesbaden
 Italy:
   Florence, Padua, Rome, Trento, Venice
-France:
-  Paris
 Poland:
   Krakow, Warsaw
 Portugal:
