@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 071</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Ordered fractions</h3> 
+<p><a href="https://projecteuler.net/problem=71">pe link</a> </p>
+<p>This problem is asking about the fascinating mathematical objects known as <a href="https://en.wikipedia.org/wiki/Farey_sequence">Farey Sequences</a>.</p> 
+
+<p>The way to construct Farey sequences is by something called the mediant of
+two fractions. Let $a/b \lt c/d $ and the mediant is defined as</p> 
+$$\frac{a+c}{b+d}.$$
+
+<p>The remarkable thing about the Farey sequence is that the mediant of the
+$n$th term and the $n+2$th term is the  $n+1$th term. For example, the mediant
+of $3/8$ and $3/7$ is $2/5$. This gives us the way to the solution. The way of
+defining a new row in the Farey sequence is by using the mediant. Since we are
+given that for $F_{8}$ the terms are $2/5$ and $3/7$ the next value between
+them would be $5/12$. However, since the denominator is larger than $8$ it
+won't appear until $F_{12}$. In fact, immediately we will see that only every
+$7$th row will a new value be introduced. So the next fraction will be added in
+$F_{19}, F_{26} , F_{33}$ and so on. The closest change over to $1,000,000$
+will occur at $F_{999997}$ which is the $142856$th time a new term will appear.
+Each time we add a new term, it is the mediant of the previous one which means
+we are always adding a factor of $3$, i.e. $F_{12}$ is the first time we
+encounter a new factor, thus we add a $3$ to the $2$ giving $5$. Thus on the
+$142856$th term, we would have $2+142856\times 3 = 428570$ being the
+numerator which is the answer.</p>
+
+</body>
+</html>
+

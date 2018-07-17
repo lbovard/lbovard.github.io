@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Problem 005</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+</head>
+<body>
+<h3>Smallest multiple</h3> 
+<p><a href="https://projecteuler.net/problem=5">pe link</a> </p>
+<p>This problem requires no programming and be solved by hand, although for
+larger numbers, it can be implemented rather easily. Although $20!$ would
+certainly work, it over counts some values, for example, $20$ is just $4\cdot 5$ so as long
+as we have one factor of both, the answer will be divisible by 20. In full, the factors are</p>
+$$
+\begin{array}{c|l}
+n & \text{Factors} \\
+\hline
+1 & 1 \\
+2 & 2 \\
+3 & 3 \\
+4 & 2^{2} \\
+5 & 5 \\
+6 & 2\cdot 3\\
+7 & 7\\
+8 & 2^{3} \\
+9 & 3^{2} \\
+10 & 2\cdot 5\\
+11 & 11\\
+12 & 2^{2}\cdot 3\\
+13 & 13\\
+14 & 2\cdot 7\\
+15 & 3\cdot 5\\
+16 & 2^{4} \\
+17 & 17 \\
+18 & 2\cdot 3^{2}\\
+19 & 19\\
+20 & 2^{2} \cdot 5
+\end{array}
+$$
+
+<p>To get the answer, we need the largest power of each prime that is smaller than the maximum value. Effectively, this means that for each prime, its largest power is</p>
+
+$$e_{i} = \bigg\lfloor{\frac{\log_{10}(i)}{\log_{10}(N)}\bigg\rfloor}, $$
+
+<p>and the answer is</p>
+
+$$\prod_{p\le N} p_{i}^{e_{i}}.$$
+
+<p>Thus the answer is $2^{4}\cdot 3^{2} \cdot 5 \cdot 7 \cdot 9 \cdot 11 \cdot 13 \cdot 17 \cdot 19 = 232792560$.</p>
+</body>
+</html>
+

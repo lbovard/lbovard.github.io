@@ -18,25 +18,42 @@
 
 <h4>Recursive Solution</h4>
 
-<p>Denote by $f(n,k)$ the number of increasing numbers with $k$-digits and $n$ being the first digit. It is easy to see that the following criteria hold</p>
+<p>Denote by $f(n,k)$ the number of increasing numbers with $n$ being the first
+digit and having $k$-digits.  It is easy to see that the following criteria hold</p>
 \begin{align}
 f(0,k) &= 0,\\
+f(i,1) &= 1,\\
 f(j,k) &= \sum_{i=j}^{9} f(i,k-1).
 \end{align}
-<p> In other words, if add another digit to a $k$ digit number, say $3$, all numbers of $k$ digits that begin with $3$ can be added. Likewise, let us define $g(n,k)$ be the number of decreasing numbers with $k$-digits and $n$ begin the first digit. It is easy to see that </p> 
-\begin{align}
+<p> In other words, if add another digit to a $k$ digit number, say $3$, all
+numbers of $k$ digits that begin with $3$ can be added. Likewise, let us define
+$g(n,k)$ be the number of decreasing numbers with $k$-digits and $n$ begin the
+first digit. It is easy to see that </p> \begin{align}
 g(0,k) &= 1,\\
+g(i,1) &= 1,\\
 g(j,k) &= \sum_{i=0}^{j} g(i,k-1).
 \end{align}
-<p>Here the $g(0,k)=1$ since the last digits can always be $0$ so we have to ensure that we count them. The only additional piece is to remove the numbers that are counted twice, i.e. numbers of the form $11111$. This is easy to enumerate as $9k$ since there are only $9$ possible $k$-digit numbers that satisfiy the criteria, $9$ $k-1$-digit numbers, and so on. Thus the solution is of the form</p>
+<p>Here the $g(0,k)=1$ since the last digits can always be $0$ so we have to
+ensure that we count them. The only additional piece is to remove the numbers
+that are counted twice, i.e. numbers of the form $11111$. This is easy to
+enumerate as $9k$ since there are only $9$ possible $k$-digit numbers that
+satisfiy the criteria, $9$ $(k-1)$-digit numbers, and so on. Thus the solution is
+of the form</p>
 $$ T(k) = \sum_{j=1}^{k}\sum_{i=1}^{9}f(i,j) + \sum_{j=1}^{k}\sum_{i=1}^{9}g(i,j) - 9k.$$
-<h4>Combinatorics Solution (improve)</h4>
+<h4>Combinatorics Solution</h4>
 
-<p>The cobminatorics approach is to count the number of ways we can arrange $k$ digits such that they are always increasing. This can be written as </p>
+<p>A very clever combinatorics argument from <a
+href="https://mathschallenge.net/full/never_decreasing_digits">here</a> can
+give the exact answer. Denote by $0$ an increase counter starting from $0$ and
+by $1$ the value of that counter. So for example the binary string
+$0011010010000$ represents the number $2235$. Here all $9$ 0s must be used and
+we must place a $1$ $k$ times. Thus the answer is simply selecting how many
+ways we can choose $k$ ones from $9+k$ 0s and 1s. This can be written as</p>
 $$\binom{9+k}{k}-1.$$
-<p> Decreasing as </p>
+<p> Decreasing follows a similar argument, taking care this time that there are 10 digits instead of 9, </p>
 $$\binom{10+k}{k}-1-k.$$
-<p> and likewise we need to remove the duplicates which are $9k$ as before. Thuis the solution is
+<p> and likewise we need to remove the duplicates which are $9k$ as before.
+Thus the solution is</p>
 $$\binom{10+k}{k}+\binom{9+k}{k} - 2 - 10k.$$
 
 </body>
