@@ -1,0 +1,32 @@
+.. _NDW:
+
+Neutrino Driven Winds
+=====================
+
+This is fine.
+
+See  :ref:`neutrino_wind_scaling`
+
+
+
+.. _neutrino_wind_scaling:
+
+Scaling Relation
+----------------
+
+For back of the envelope calculations, it is useful to have at hand the scaling
+relation for neutrino driven wind.  This was first calculated by `Qian and
+Woosley 1996 <https://arxiv.org/abs/astro-ph/9611094>`_ who, using
+a 1D steady-state Newtonian model, derived an analytic expression (Eq. 58) for the 
+mass loss rate from neutrino driven wind as
+
+.. math::
+
+  \dot{M} \propto L_{\nu}^{5/3} \epsilon_{\nu}^{10/3} R^{5/3} M^{-2}.
+
+Subsequent improvements by `Thompson et al. 2001
+<https://arxiv.org/abs/astro-ph/0105004v2>`_ using a 1D steady-state general
+relativistic model suggested similar scaling. Further improvements
+
+
+

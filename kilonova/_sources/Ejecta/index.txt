@@ -1,0 +1,11 @@
+Types of Ejecta
+===============
+
+.. toctree::
+  :maxdepth: 2
+
+  Dynamical/index.txt
+  NeutrinoDrivenWinds/index.txt
+  AccretionDisk/index.txt
+
+Note: You can :ref:`search` this documentation.

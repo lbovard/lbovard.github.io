@@ -1,0 +1,92 @@
+.. _SCALINGRELATIONS:
+
+
+Scaling Relations
+=================
+
+.. _scaling_overview:
+
+This contains a list of the various scalings that arise in the context of
+neutron star mergers
+
+.. contents:: Scalings
+
+.. _scales_mf:
+
+Magnetic Fields
+---------------
+
+In this section are scaling relations related to magnetic fields.
+
+Ohmic dissipation
+^^^^^^^^^^^^^^^^^
+The timescale of the Ohmic dissipation, :math:`\tau_{d}` can be expressed as
+
+.. math:: 
+  \tau_d \simeq 5\times 10^{11}\,\, \left(\frac{\rho}{1~{\rm
+      g\,cm^{-3}}}\right)^{0.1} \bigg(\frac{T}{1\,{\rm
+      MeV}}\bigg)^{0.8}
+  \left(\frac{\lambda_B}{1\,{\rm km}}\right)^2~{\rm s} ,
+
+
+where :math:`\rho` is the rest-mass density, :math:`T` is the temperature, and
+:math:`\lambda_{B}` is the characteristic length of the magnetic field. 
+
+Source: `Harutyunyan et al. 2018 <http://arxiv.org/abs/1803.09215>`_
+
+Hall effect
+^^^^^^^^^^^
+The timescale of the Hall effect, :math:`\tau_{B}` can be expressed as
+
+.. math:: 
+  \tau_B \simeq 1.2\times 10^{2}\, \left(\frac{B}{10^{13} \rm{G}}\right)^{-1}
+  \left(\frac{\rho}{1~{\rm g\, cm^{-3}}}\right)
+  \left(\frac{\lambda_B}{1~{\rm km}}\right)^2~{\rm s}\,,
+
+
+where :math:`\rho` is the rest-mass density, :math:`\lambda_{B}` is the
+characteristic length of the magnetic field, and :math:`B` is the magnetic
+field. 
+Source: `Harutyunyan et al. 2018 <http://arxiv.org/abs/1803.09215>`_
+
+.. _scales_ejecta:
+
+Ejecta
+------
+
+Unmagnetised neutrino driven wind mass loss
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Neutrinos
+---------
+
+
+Mean free path
+^^^^^^^^^^^^^^
+
+The length scale of the mean free path of neutrinos, :math:`\lambda_{\nu}` can be expressed as
+
+.. math::
+  \lambda_{\nu} \sim 2.56\times 10^{14}
+  \left(\frac{\rho}{1~{\rm g\, cm^{-3}}}\right)^{-1}\left(\frac{E_{\nu}}{1\, \rm{MeV}}\right)^{-2}\, \rm{km},
+
+where :math:`\rho` is the rest-mass density and :math:`E_{\nu}` is the energy of the neutrinos.
+
+Source: see derivation in section neutrinos.
+
+
+Cooling
+^^^^^^^
+
+Neutrinos inside the neutron star are trapped (see mean free path length scale) and thus will 
+diffuse out over a timescale :math:`t_{\rm{cool}}` given as
+
+.. math::
+  t_{\rm cool} \sim 800 \left(\frac{M}{2.8 M_{\odot}} \right)\left(\frac{R}{10\, \rm{km}}\right)^{-1}
+  \left(\frac{E_{\nu}}{1\, \rm{MeV}}\right)^{2}\, \rm{ms}, 
+
+where :math:`M` is the mass, :math:`R` is the radius of the merger remanent and
+:math:`E_{\nu}` is the energy of the neutrinos.
+
+Source: `Paschalidis et al. 2012 <http://arxiv.org/abs/1208.5487>`_ 

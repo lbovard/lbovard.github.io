@@ -1,0 +1,420 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Original Kilonova Model by Li &amp; Paczyński &#8212; Kilonova  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Types of Ejecta" href="Ejecta/index.html" />
+    <link rel="prev" title="Neutrino Mean Free Path in Neutron Stars" href="Neutrinos/nu_mpf.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Ejecta/index.html" title="Types of Ejecta"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Neutrinos/nu_mpf.html" title="Neutrino Mean Free Path in Neutron Stars"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Kilonova  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="original-kilonova-model-by-li-paczynski">
+<h1>Original Kilonova Model by Li &amp; Paczyński<a class="headerlink" href="#original-kilonova-model-by-li-paczynski" title="Permalink to this headline">¶</a></h1>
+<p>The first paper to propose a model of the kilonova was <a class="reference external" href="https://arxiv.org/abs/astro-ph/9807272">Li and
+Paczyński</a> (LP) in 1998. The
+model they had was very simple, but it contains many of the qualitative
+features that later models had.</p>
+<p>To begin, they considered a ‘<em>one zone mode of an expanding envelope</em>’.
+The expanding envelope is a constantly expanding shell of matter of
+constant mass <span class="math notranslate">\(M\)</span>, expanding with constant velocity <span class="math notranslate">\(v\)</span>, and
+radius <span class="math notranslate">\(r=vt\)</span>. It follows that the density is</p>
+<div class="math notranslate">
+\[\rho(t) = \frac{3M}{4\pi r(t)^{3}} = \left(\frac{3M}{4\pi v^{3}}\right)t^{-3},\]</div>
+<p>Now next consider how the temperature can change within the expanding
+sphere. LP consider three effects 1. adiabatic expansion 2. heat
+generation from radioactive decays 3. radiative heat losses from the
+surface</p>
+<p>The first law of thermodynamics states</p>
+<div class="math notranslate">
+\[dE = \delta Q + W,\]</div>
+<p>where <span class="math notranslate">\(E\)</span> is the internal energy, <span class="math notranslate">\(Q\)</span> is the heat transfer,
+<span class="math notranslate">\(W\)</span> is the work. Here we only consider PdV work so</p>
+<div class="math notranslate">
+\[W = - pdV.\]</div>
+<p>It is also useful to consider the above expression in terms of the per
+baryon number (see Eq. 2.1.1 of Shapiro &amp; Teukoslsky) which gives</p>
+<div class="math notranslate">
+\[dE  - W = d\left(\frac{U}{n}\right) + p d\left(\frac{1}{n}\right),\]</div>
+<p>and since the mass is constant, we can divide through to get the
+expressions per unit mass yielding,</p>
+<div class="math notranslate">
+\[d\left(\frac{U}{\rho}\right) + p d\left(\frac{1}{\rho}\right).\]</div>
+<p>Similarly, <span class="math notranslate">\(Q\)</span> is the heat transfer, which is just the difference
+between losses do the surface – the luminosity – and the heat created
+due to radioactive decay. Denote these respectively as <span class="math notranslate">\(L/M\)</span> and
+<span class="math notranslate">\(\dot{\epsilon}\)</span> where these are defined per mass. Combining these
+results yields</p>
+<div class="math notranslate">
+\[d\left(\frac{U}{\rho}\right) + p d\left(\frac{1}{\rho}\right) = -\frac{L}{M} + \dot{\epsilon},\]</div>
+<p>which re-arranging and multiplying across by the mass yields</p>
+<div class="math notranslate">
+\[L = \left(\dot{\epsilon}- d\left(\frac{U}{\rho}\right) - p d\left(\frac{1}{\rho}\right)\right)M.\]</div>
+<div class="section" id="adiabatic-expansion">
+<h2>Adiabatic expansion<a class="headerlink" href="#adiabatic-expansion" title="Permalink to this headline">¶</a></h2>
+<p>Using the <a class="reference external" href="https://en.wikipedia.org/wiki/Photon_gas#Thermodynamics_of_a_black_body_photon_gas">photon
+gas</a>
+model for the material, the radiation energy density <span class="math notranslate">\(U\)</span> is simply</p>
+<div class="math notranslate">
+\[U = 3p,\]</div>
+<p>where <span class="math notranslate">\(p\)</span> is the pressure. Furthermore, <span class="math notranslate">\(U\)</span> can be related
+to the temperature as</p>
+<div class="math notranslate">
+\[U = aT^{4},\]</div>
+<p>where <span class="math notranslate">\(a\)</span> is the radiation constant.</p>
+</div>
+<div class="section" id="radioactive">
+<h2>Radioactive<a class="headerlink" href="#radioactive" title="Permalink to this headline">¶</a></h2>
+<p>We now need an expression for the radioactive decay of elements.
+Following LP they propose the simple model for an individual isotope
+decay as</p>
+<div class="math notranslate">
+\[\dot{\epsilon} = \frac{fc^{2}}{t_{\rm{rad}}}\exp(-t/t_{\rm{rad}}),\]</div>
+<p>where <span class="math notranslate">\(t_{\rm rad}\)</span> is the timescale of radioactive decay and
+<span class="math notranslate">\(f\)</span> is a measure of how much rest mass energy is emitted, i.e. the
+efficiency. However since the kilonova is caused due to the radioactive
+decay created from many different elements, the actual decay rate will
+be</p>
+<div class="math notranslate">
+\[\dot{\epsilon} = \sum_{i}\frac{fc^{2}}{t_{i}}\exp(-t/t_{i}),\]</div>
+<p>summing over all the possible radiative decay time scales <span class="math notranslate">\(t_{i}\)</span>.
+Again, following LP, they assume that <span class="math notranslate">\(t_{i}\)</span> is distributed
+uniformly in logarithmic time intervals, and assuming that there are
+sufficiently large number of isotopes, the above sum can be written as
+an integral</p>
+<div class="math notranslate">
+\[\dot{\epsilon} = fc^{2} \int_{0}^{\infty} \frac{1}{x}\exp(-t/x)d\log x,\]</div>
+<p>which evaluates simply to</p>
+<div class="math notranslate">
+\[\dot{\epsilon} = \frac{fc^{2}}{t}.\]</div>
+<p>Although the model for radioactive decay is very simple, the current
+best calculations find that <span class="math notranslate">\(\dot{\epsilon} \sim t^{-1.3}\)</span> so the
+original assumptions by LP is very good.</p>
+</div>
+<div class="section" id="radiative-loses">
+<h2>Radiative Loses<a class="headerlink" href="#radiative-loses" title="Permalink to this headline">¶</a></h2>
+<p>The final term to analyse is the luminosity. In the diffusion
+approximation, the luminosity is given by</p>
+<div class="math notranslate">
+\[L = 4\pi R^{2} F = 4\pi R^{2} \sigma T_{\rm eff}^{4} \sim 4\pi R^{2} \sigma \frac{T^{4}}{\kappa \rho R},\]</div>
+<p>where <span class="math notranslate">\(\sigma = ac/4\)</span>, <span class="math notranslate">\(\kappa\)</span> is the opacity, and
+<span class="math notranslate">\(T_{\rm eff}\)</span> is the effective temperature.</p>
+</div>
+<div class="section" id="putting-it-together">
+<h2>Putting it together<a class="headerlink" href="#putting-it-together" title="Permalink to this headline">¶</a></h2>
+<p>In the above, the diffusion approximation has been made (elaborate?)
+which assumes that the optical depth is large. The optical depth is
+defined to be</p>
+<div class="math notranslate">
+\[\tau = \kappa\rho R,\]</div>
+<p>and the diffusion approximation requires that <span class="math notranslate">\(\tau\gg 1\)</span>.
+<span class="math notranslate">\(\tau \ll 1\)</span> corresponds to an optically thin region. The
+transition period is when <span class="math notranslate">\(\tau = 1\)</span> which allow the critical time
+<span class="math notranslate">\(t_{c}\)</span> to be defined</p>
+<div class="math notranslate">
+\[t_{c} = \left(\frac{3\kappa M}{4\pi v^{2}}\right)^{1/2}\]</div>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">Msol</span><span class="o">=</span><span class="mf">1.9887e33</span> <span class="c1">#solar mass in grams</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">2.998e10</span> <span class="c1">#c in cm/s</span>
+<span class="n">kappa</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1">#opacity in  cm^2/g</span>
+
+<span class="n">v</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">c</span>
+<span class="n">M</span><span class="o">=</span><span class="mf">0.01</span><span class="o">*</span><span class="n">Msol</span>
+
+<span class="n">tc_sec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">kappa</span><span class="o">*</span><span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">tc_day</span> <span class="o">=</span> <span class="n">tc_sec</span><span class="o">/</span><span class="mi">86400</span>
+
+<span class="nb">print</span> <span class="s2">&quot;Critical time is </span><span class="si">{:0.2f}</span><span class="s2"> s or </span><span class="si">{:1.2f}</span><span class="s2"> days&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tc_sec</span><span class="p">,</span><span class="n">tc_day</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Critical</span> <span class="n">time</span> <span class="ow">is</span> <span class="mf">97509.06</span> <span class="n">s</span> <span class="ow">or</span> <span class="mf">1.13</span> <span class="n">days</span>
+</pre></div>
+</div>
+<p>Thus the critical time is approximately 1.13 days which yields the
+scaling relation</p>
+<div class="math notranslate">
+\[t_{c} \sim 1.13\, \rm{days}\, \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{-1}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{1/2}.\]</div>
+<p>This is roughly the timescale in which we expect this model to break
+down.</p>
+<p>Finally, following LP, the following dimensionless parameters are
+defined</p>
+<div class="math notranslate">
+\[T_{1} = \left(\frac{4\pi f^{2}c^{4}}{3a^{2}\kappa^{3}M}\right)^{1/8}, \tilde{U} = \frac{U}{aT_{1}^{4}}, \tau = \frac{t}{t_{c}}, \beta = \frac{v}{c},\]</div>
+<p>where <span class="math notranslate">\(\tau\)</span> no longer denotes the optical depth. Using these
+relations and some algebra, the relation for the luminosity can be
+written as</p>
+<div class="math notranslate">
+\[L = L_{0} \tau^{4} \tilde{U},\]</div>
+<p>where</p>
+<div class="math notranslate">
+\[L_{0} = \frac{3fMc^{2}}{4\beta t_{c}} = 4.13\times 10^{44}\, \rm{erg}\, \rm{s}^{-1} \left(\frac{f}{0.001}\right) \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{-1/2}.\]</div>
+<p>Taking these and plugging everything in yields the following
+differential equation</p>
+<div class="math notranslate">
+\[\frac{d\tilde{U}}{d\tau} + \left(\frac{4}{\tau} + \frac{3\tau}{4\beta}\right) = \frac{g(\tau)}{\tau^{3}},\]</div>
+<p>where <span class="math notranslate">\(g(\tau)\)</span> is the radioactive decay law, here
+<span class="math notranslate">\(g(\tau)=\tau^{-1}\)</span>. With this we have everything we need. By
+solving the above equation, we can obtain the luminosity.</p>
+</div>
+<div class="section" id="solving-the-model">
+<h2>Solving the model<a class="headerlink" href="#solving-the-model" title="Permalink to this headline">¶</a></h2>
+<p>It turns out that the above model has an analytical solution available.
+In fact, a general solution for any power-law for the radioactive decay
+yields an analytical solution in terms of the incomplete gamma function.
+However for now we just focus on the inverse decay law. The exact
+solution here is</p>
+<div class="math notranslate">
+\[\tilde{U} = \frac{C}{\tau^{4} e^{3\tau^{2} / 8\beta}} + \sqrt{\frac{8\beta}{3}}\frac{1}{\tau^{4}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right),\]</div>
+<p>where <span class="math notranslate">\(C\)</span> is some integration constant to be determined by the
+initial conditions and <span class="math notranslate">\(Y(x)\)</span> is Dawson’s integral. This gives a
+luminosity of</p>
+<div class="math notranslate">
+\[L = L_{0}\frac{C}{e^{3\tau^{2} / 8\beta}} + L_{0}\sqrt{\frac{8\beta}{3}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right).\]</div>
+<p>The constant <span class="math notranslate">\(C\)</span> can be considered negligible as its initial value
+will be very small (expand). Thus the luminosity is given as</p>
+<div class="math notranslate">
+\[L = L_{0}\sqrt{\frac{8\beta}{3}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right).\]</div>
+<p>Using this, the peak luminosity can be obtained. It can be shown that
+the maximum of <span class="math notranslate">\(Y(x)\)</span> occurs at <span class="math notranslate">\(x_{m} \approx 0.9241\)</span> and
+<span class="math notranslate">\(Y(x_{m}) \approx 0.5410\)</span>. This means that</p>
+<div class="math notranslate">
+\[\sqrt{\frac{3}{8\beta}}\tau_{m} \sim 0.9241,\]</div>
+<p>which plugging in the above values, and rewriting in terms of the proper
+scaling yields</p>
+<div class="math notranslate">
+\[t_{m} \sim 0.98\, \rm{days}\, \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{-1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{1/2}.\]</div>
+<p>Likewise, the peak luminosity can be written as, using the same maximum
+as</p>
+<div class="math notranslate">
+\[L_{0} = 2.1\times 10^{44}\, \rm{erg}\, \rm{s}^{-1} \left(\frac{f}{0.001}\right) \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{-1/2}.\]</div>
+<p>We can now plot this to get a feeling for the behaviour of the
+lightcurve.</p>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### parameters</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">1.</span> <span class="c1">#speed of light</span>
+<span class="n">V</span><span class="o">=</span><span class="n">c</span><span class="o">/</span><span class="mf">3.</span> <span class="c1">#vel of ejecta</span>
+<span class="n">beta</span><span class="o">=</span><span class="n">V</span><span class="o">/</span><span class="n">c</span> <span class="c1">#ratio</span>
+<span class="n">kappa</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1">#opacity</span>
+<span class="n">Mej</span><span class="o">=</span><span class="mf">0.01</span> <span class="c1">#mass ejected</span>
+<span class="n">Mej_ref</span><span class="o">=</span><span class="mf">0.01</span> <span class="c1">#reference ejecta mass</span>
+<span class="n">kappa_e</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1">#electron opacity</span>
+<span class="n">f_ref</span><span class="o">=</span><span class="mf">0.001</span> <span class="c1">#reference mass fraction</span>
+
+
+<span class="k">def</span> <span class="nf">L0_calc</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">M</span><span class="p">,</span><span class="n">kappa</span><span class="p">):</span>
+    <span class="c1">#define the reference luminosity</span>
+    <span class="c1">#in erg/s</span>
+    <span class="k">return</span> <span class="mf">4.13e44</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">tc_calc</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">kappa</span><span class="p">):</span>
+    <span class="c1">#define the critcal time where sphere becomes optically thin</span>
+    <span class="c1">#in days</span>
+    <span class="k">return</span> <span class="mf">1.13</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where standard values have been taken from the paper. Moving to the
+plots</p>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">special</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="c1">#time in days</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1">#compute tc</span>
+<span class="n">tc</span><span class="o">=</span><span class="n">tc_calc</span><span class="p">(</span><span class="n">Mej</span><span class="o">/</span><span class="n">Mej_ref</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">kappa</span><span class="o">/</span><span class="n">kappa_e</span><span class="p">)</span>
+<span class="c1">#where it becomes optically thin</span>
+<span class="n">tc_idx</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="n">tc</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e-3</span><span class="p">,</span><span class="mf">1.e-4</span><span class="p">,</span><span class="mf">1.e-5</span><span class="p">]:</span>
+  <span class="c1">#compute L0</span>
+  <span class="n">L0</span><span class="o">=</span><span class="n">L0_calc</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">f_ref</span><span class="p">,</span><span class="n">Mej</span><span class="o">/</span><span class="n">Mej_ref</span><span class="p">,</span><span class="n">kappa</span><span class="o">/</span><span class="n">kappa_e</span><span class="p">)</span>
+  <span class="n">L</span><span class="o">=</span><span class="n">L0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">beta</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">special</span><span class="o">.</span><span class="n">dawsn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="p">(</span><span class="mf">8.</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">tc</span><span class="p">)</span>
+
+  <span class="n">L</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">L</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">41</span><span class="p">,</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t [days]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log L [erg/s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/lipaczynski_model_6_0.png" src="_images/lipaczynski_model_6_0.png" />
+<p>The lines from top to bottom at <span class="math notranslate">\(\log f =-3,-4,-5\)</span> respectively.
+With the detection of GW170817, an actual luminosity curve from a
+kilonova can be added.</p>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="c1">#from Cowperthwaite</span>
+<span class="n">tmerg</span><span class="o">=</span><span class="mf">57982.529</span>
+
+<span class="n">obs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;lc_bol_linear.csv&quot;</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+<span class="n">t_obs</span><span class="o">=</span><span class="n">obs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">tmerg</span>
+<span class="n">lum_obs</span><span class="o">=</span><span class="n">obs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t_obs</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">lum_obs</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cowperthwaite et al. 2017&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1.e-6</span><span class="p">]:</span>
+  <span class="c1">#compute L0</span>
+  <span class="n">L0</span><span class="o">=</span><span class="n">L0_calc</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">f_ref</span><span class="p">,</span><span class="n">Mej</span><span class="o">/</span><span class="n">Mej_ref</span><span class="p">,</span><span class="n">kappa</span><span class="o">/</span><span class="n">kappa_e</span><span class="p">)</span>
+  <span class="n">L</span><span class="o">=</span><span class="n">L0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">beta</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">special</span><span class="o">.</span><span class="n">dawsn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="p">(</span><span class="mf">8.</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">tc</span><span class="p">)</span>
+
+  <span class="n">L</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\log f = -6$&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">L</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t [days]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log L [erg/s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/lipaczynski_model_8_0.png" src="_images/lipaczynski_model_8_0.png" />
+<p>As can easily be seen from the above figure, the very simple kilonova
+proposed by LP does not really match the observation. However, what
+happens if we change the decay law from <span class="math notranslate">\(\tau^{-1}\)</span> to
+<span class="math notranslate">\(\tau^{-1.3}\)</span>? Instead of an analytical solution, a numerical
+solution is thus sought. This is easy to implement</p>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="k">import</span> <span class="n">odeint</span>
+
+<span class="k">def</span> <span class="nf">RHS</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+  <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mf">4.</span><span class="o">/</span><span class="n">t</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">*</span><span class="n">U</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">t</span><span class="o">**</span><span class="mf">4.3</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">t_obs</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">lum_obs</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cowperthwaite et al. 2017&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">U</span><span class="o">=</span><span class="n">odeint</span><span class="p">(</span><span class="n">RHS</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">beta</span><span class="p">,))</span>
+<span class="n">U</span><span class="o">=</span><span class="n">U</span><span class="o">.</span><span class="n">transpose</span><span class="p">()[:][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">f</span><span class="o">=</span><span class="mf">1.e-6</span>
+<span class="n">L0</span><span class="o">=</span><span class="n">L0_calc</span><span class="p">(</span><span class="n">f</span><span class="o">/</span><span class="n">f_ref</span><span class="p">,</span><span class="n">Mej</span><span class="o">/</span><span class="n">Mej_ref</span><span class="p">,</span><span class="n">kappa</span><span class="o">/</span><span class="n">kappa_e</span><span class="p">)</span>
+
+<span class="n">L</span><span class="o">=</span><span class="n">L0</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">4</span><span class="c1">#L0*U*t**4</span>
+
+<span class="n">L</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$g(\tau)=\tau^{-1.3}$&#39;</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="n">L0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">beta</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">special</span><span class="o">.</span><span class="n">dawsn</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="o">/</span><span class="p">(</span><span class="mf">8.</span><span class="o">*</span><span class="n">beta</span><span class="p">))</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">tc</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">tc_idx</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$g(\tau) = \tau^{-1}$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">L</span><span class="p">[</span><span class="n">tc_idx</span><span class="p">:],</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;t [days]&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;log L [erg/s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/lipaczynski_model_10_0.png" src="_images/lipaczynski_model_10_0.png" />
+<p>So the effect doesn’t change too much. However, this was the first work
+to propose a complete model of the kilonova lightcurve and forms the
+basic template on which future work has been constructed.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Original Kilonova Model by Li &amp; Paczyński</a><ul>
+<li><a class="reference internal" href="#adiabatic-expansion">Adiabatic expansion</a></li>
+<li><a class="reference internal" href="#radioactive">Radioactive</a></li>
+<li><a class="reference internal" href="#radiative-loses">Radiative Loses</a></li>
+<li><a class="reference internal" href="#putting-it-together">Putting it together</a></li>
+<li><a class="reference internal" href="#solving-the-model">Solving the model</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Neutrinos/nu_mpf.html"
+                        title="previous chapter">Neutrino Mean Free Path in Neutron Stars</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Ejecta/index.html"
+                        title="next chapter">Types of Ejecta</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/lipaczynski_model.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Ejecta/index.html" title="Types of Ejecta"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Neutrinos/nu_mpf.html" title="Neutrino Mean Free Path in Neutron Stars"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Kilonova  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Luke Bovard.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
+    </div>
+  </body>
+</html>

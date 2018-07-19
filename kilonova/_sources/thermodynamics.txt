@@ -1,0 +1,42 @@
+.. _THERMO:
+
+Thermodynamics
+==============
+
+
+
+
+.. _basic_thermo:
+
+Basic Thermodynamics
+--------------------
+
+Consider the expansion of pressure, :math:`p(\rho,T)`, where :math:`\rho` is the
+rest-mass density and :math:`T` is the temperature. Expanding this out as differentials
+yields the following relationship between the differentials
+
+.. math::
+
+ dp = \frac{\partial p}{\partial T}\bigg|_{\rho}\delta T 
+ +  \frac{\partial p}{\partial \rho}\bigg|_{T}\delta \rho.
+
+
+By diving this expression by various differentials, such as radius, yields a
+differential expression for various identities involving the pressure.
+
+
+.. _stefanboltzmannlaw:
+
+Stefan-Boltzmann Law
+--------------------
+
+The Stefan-Boltzmann law relates the temperature of a blackbody to the power
+radiated away. In astronomy instead of using power, the term luminosity is 
+used instead. The law states
+
+.. math::
+
+ L = \sigma A T^{4},
+
+where :math:`\sigma` is the Stefan-Boltzmann constant, :math:`A` is the surface
+area, and :math:`T` is the temperature. Since power is energy 

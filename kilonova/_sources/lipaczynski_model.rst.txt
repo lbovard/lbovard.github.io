@@ -1,0 +1,370 @@
+
+Original Kilonova Model by Li & Paczyński
+=========================================
+
+The first paper to propose a model of the kilonova was `Li and
+Paczyński <https://arxiv.org/abs/astro-ph/9807272>`__ (LP) in 1998. The
+model they had was very simple, but it contains many of the qualitative
+features that later models had.
+
+To begin, they considered a '*one zone mode of an expanding envelope*'.
+The expanding envelope is a constantly expanding shell of matter of
+constant mass :math:`M`, expanding with constant velocity :math:`v`, and
+radius :math:`r=vt`. It follows that the density is
+
+.. math:: \rho(t) = \frac{3M}{4\pi r(t)^{3}} = \left(\frac{3M}{4\pi v^{3}}\right)t^{-3},
+
+Now next consider how the temperature can change within the expanding
+sphere. LP consider three effects 1. adiabatic expansion 2. heat
+generation from radioactive decays 3. radiative heat losses from the
+surface
+
+The first law of thermodynamics states
+
+.. math::  dE = \delta Q + W,
+
+where :math:`E` is the internal energy, :math:`Q` is the heat transfer,
+:math:`W` is the work. Here we only consider PdV work so
+
+.. math:: W = - pdV.
+
+It is also useful to consider the above expression in terms of the per
+baryon number (see Eq. 2.1.1 of Shapiro & Teukoslsky) which gives
+
+.. math:: dE  - W = d\left(\frac{U}{n}\right) + p d\left(\frac{1}{n}\right),
+
+and since the mass is constant, we can divide through to get the
+expressions per unit mass yielding,
+
+.. math:: d\left(\frac{U}{\rho}\right) + p d\left(\frac{1}{\rho}\right).
+
+Similarly, :math:`Q` is the heat transfer, which is just the difference
+between losses do the surface -- the luminosity -- and the heat created
+due to radioactive decay. Denote these respectively as :math:`L/M` and
+:math:`\dot{\epsilon}` where these are defined per mass. Combining these
+results yields
+
+.. math:: d\left(\frac{U}{\rho}\right) + p d\left(\frac{1}{\rho}\right) = -\frac{L}{M} + \dot{\epsilon},
+
+which re-arranging and multiplying across by the mass yields
+
+.. math::  L = \left(\dot{\epsilon}- d\left(\frac{U}{\rho}\right) - p d\left(\frac{1}{\rho}\right)\right)M.
+
+Adiabatic expansion
+-------------------
+
+Using the `photon
+gas <https://en.wikipedia.org/wiki/Photon_gas#Thermodynamics_of_a_black_body_photon_gas>`__
+model for the material, the radiation energy density :math:`U` is simply
+
+.. math:: U = 3p,
+
+where :math:`p` is the pressure. Furthermore, :math:`U` can be related
+to the temperature as
+
+.. math:: U = aT^{4},
+
+where :math:`a` is the radiation constant.
+
+Radioactive
+-----------
+
+We now need an expression for the radioactive decay of elements.
+Following LP they propose the simple model for an individual isotope
+decay as
+
+.. math:: \dot{\epsilon} = \frac{fc^{2}}{t_{\rm{rad}}}\exp(-t/t_{\rm{rad}}),
+
+where :math:`t_{\rm rad}` is the timescale of radioactive decay and
+:math:`f` is a measure of how much rest mass energy is emitted, i.e. the
+efficiency. However since the kilonova is caused due to the radioactive
+decay created from many different elements, the actual decay rate will
+be
+
+.. math:: \dot{\epsilon} = \sum_{i}\frac{fc^{2}}{t_{i}}\exp(-t/t_{i}),
+
+summing over all the possible radiative decay time scales :math:`t_{i}`.
+Again, following LP, they assume that :math:`t_{i}` is distributed
+uniformly in logarithmic time intervals, and assuming that there are
+sufficiently large number of isotopes, the above sum can be written as
+an integral
+
+.. math:: \dot{\epsilon} = fc^{2} \int_{0}^{\infty} \frac{1}{x}\exp(-t/x)d\log x,
+
+which evaluates simply to
+
+.. math:: \dot{\epsilon} = \frac{fc^{2}}{t}.
+
+Although the model for radioactive decay is very simple, the current
+best calculations find that :math:`\dot{\epsilon} \sim t^{-1.3}` so the
+original assumptions by LP is very good.
+
+Radiative Loses
+---------------
+
+The final term to analyse is the luminosity. In the diffusion
+approximation, the luminosity is given by
+
+.. math:: L = 4\pi R^{2} F = 4\pi R^{2} \sigma T_{\rm eff}^{4} \sim 4\pi R^{2} \sigma \frac{T^{4}}{\kappa \rho R},
+
+where :math:`\sigma = ac/4`, :math:`\kappa` is the opacity, and
+:math:`T_{\rm eff}` is the effective temperature.
+
+Putting it together
+-------------------
+
+In the above, the diffusion approximation has been made (elaborate?)
+which assumes that the optical depth is large. The optical depth is
+defined to be
+
+.. math:: \tau = \kappa\rho R,
+
+and the diffusion approximation requires that :math:`\tau\gg 1`.
+:math:`\tau \ll 1` corresponds to an optically thin region. The
+transition period is when :math:`\tau = 1` which allow the critical time
+:math:`t_{c}` to be defined
+
+.. math:: t_{c} = \left(\frac{3\kappa M}{4\pi v^{2}}\right)^{1/2}
+
+.. code:: ipython2
+
+    import numpy as np
+    
+    Msol=1.9887e33 #solar mass in grams
+    c=2.998e10 #c in cm/s
+    kappa=0.2 #opacity in  cm^2/g
+    
+    v=1./3 * c
+    M=0.01*Msol
+    
+    tc_sec = np.sqrt(3*kappa*M / (4*np.pi*v**2))
+    tc_day = tc_sec/86400
+    
+    print "Critical time is {:0.2f} s or {:1.2f} days".format(tc_sec,tc_day)
+
+
+.. parsed-literal::
+
+    Critical time is 97509.06 s or 1.13 days
+
+
+Thus the critical time is approximately 1.13 days which yields the
+scaling relation
+
+.. math:: t_{c} \sim 1.13\, \rm{days}\, \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{-1}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{1/2}.
+
+This is roughly the timescale in which we expect this model to break
+down.
+
+Finally, following LP, the following dimensionless parameters are
+defined
+
+.. math:: T_{1} = \left(\frac{4\pi f^{2}c^{4}}{3a^{2}\kappa^{3}M}\right)^{1/8}, \tilde{U} = \frac{U}{aT_{1}^{4}}, \tau = \frac{t}{t_{c}}, \beta = \frac{v}{c},
+
+where :math:`\tau` no longer denotes the optical depth. Using these
+relations and some algebra, the relation for the luminosity can be
+written as
+
+.. math:: L = L_{0} \tau^{4} \tilde{U},
+
+where
+
+.. math:: L_{0} = \frac{3fMc^{2}}{4\beta t_{c}} = 4.13\times 10^{44}\, \rm{erg}\, \rm{s}^{-1} \left(\frac{f}{0.001}\right) \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{-1/2}.
+
+Taking these and plugging everything in yields the following
+differential equation
+
+.. math:: \frac{d\tilde{U}}{d\tau} + \left(\frac{4}{\tau} + \frac{3\tau}{4\beta}\right) = \frac{g(\tau)}{\tau^{3}},
+
+where :math:`g(\tau)` is the radioactive decay law, here
+:math:`g(\tau)=\tau^{-1}`. With this we have everything we need. By
+solving the above equation, we can obtain the luminosity.
+
+Solving the model
+-----------------
+
+It turns out that the above model has an analytical solution available.
+In fact, a general solution for any power-law for the radioactive decay
+yields an analytical solution in terms of the incomplete gamma function.
+However for now we just focus on the inverse decay law. The exact
+solution here is
+
+.. math:: \tilde{U} = \frac{C}{\tau^{4} e^{3\tau^{2} / 8\beta}} + \sqrt{\frac{8\beta}{3}}\frac{1}{\tau^{4}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right),
+
+where :math:`C` is some integration constant to be determined by the
+initial conditions and :math:`Y(x)` is Dawson's integral. This gives a
+luminosity of
+
+.. math:: L = L_{0}\frac{C}{e^{3\tau^{2} / 8\beta}} + L_{0}\sqrt{\frac{8\beta}{3}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right).
+
+The constant :math:`C` can be considered negligible as its initial value
+will be very small (expand). Thus the luminosity is given as
+
+.. math:: L = L_{0}\sqrt{\frac{8\beta}{3}}Y\left(\sqrt{\frac{3}{8\beta}}\tau\right).
+
+Using this, the peak luminosity can be obtained. It can be shown that
+the maximum of :math:`Y(x)` occurs at :math:`x_{m} \approx 0.9241` and
+:math:`Y(x_{m}) \approx 0.5410`. This means that
+
+.. math:: \sqrt{\frac{3}{8\beta}}\tau_{m} \sim 0.9241,
+
+which plugging in the above values, and rewriting in terms of the proper
+scaling yields
+
+.. math:: t_{m} \sim 0.98\, \rm{days}\, \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{-1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{1/2}.
+
+Likewise, the peak luminosity can be written as, using the same maximum
+as
+
+.. math:: L_{0} = 2.1\times 10^{44}\, \rm{erg}\, \rm{s}^{-1} \left(\frac{f}{0.001}\right) \left(\frac{M}{0.01 M_{\odot}}\right)^{1/2}\left(\frac{3v}{c}\right)^{1/2}\left(\frac{\kappa}{0.2 \rm{cm}^{2}\,\rm{g}^{-1}}\right)^{-1/2}.
+
+We can now plot this to get a feeling for the behaviour of the
+lightcurve.
+
+.. code:: ipython2
+
+    ### parameters
+    c=1. #speed of light
+    V=c/3. #vel of ejecta
+    beta=V/c #ratio
+    kappa=0.2 #opacity 
+    Mej=0.01 #mass ejected
+    Mej_ref=0.01 #reference ejecta mass
+    kappa_e=0.2 #electron opacity
+    f_ref=0.001 #reference mass fraction
+    
+    
+    def L0_calc(f,M,kappa):
+        #define the reference luminosity
+        #in erg/s
+        return 4.13e44*f*np.sqrt(M)/np.sqrt(kappa)
+    def tc_calc(M,v,kappa):
+        #define the critcal time where sphere becomes optically thin
+        #in days
+        return 1.13*np.sqrt(M)*np.sqrt(kappa)/(3*v)
+
+
+where standard values have been taken from the paper. Moving to the
+plots
+
+.. code:: ipython2
+
+    from scipy import special
+    
+    fig,ax=plt.subplots() 
+    #time in days
+    t = np.linspace(0.0001,3, num=1000)
+    
+    #compute tc
+    tc=tc_calc(Mej/Mej_ref,beta,kappa/kappa_e)
+    #where it becomes optically thin 
+    tc_idx=np.where(t>tc)[0][0]
+    
+    
+    for f in [1.e-3,1.e-4,1.e-5]:
+      #compute L0
+      L0=L0_calc(f/f_ref,Mej/Mej_ref,kappa/kappa_e)
+      L=L0*np.sqrt(8*beta/3.)*special.dawsn(np.sqrt(3./(8.*beta))*t/tc)
+    
+      L=np.log10(L)
+    
+      ax.plot(t[0:tc_idx],L[0:tc_idx],color='k')
+      ax.plot(t[tc_idx:],L[tc_idx:],linestyle='--',color='k')
+      ax.scatter(t[tc_idx],L[tc_idx],color='k')
+    ax.set_xlim(0,2)
+    ax.set_ylim(41,45)
+    ax.set_xlabel("t [days]")
+    ax.set_ylabel("log L [erg/s]")
+    plt.show()
+
+
+
+.. image:: lipaczynski_model_files/lipaczynski_model_6_0.png
+
+
+The lines from top to bottom at :math:`\log f =-3,-4,-5` respectively.
+With the detection of GW170817, an actual luminosity curve from a
+kilonova can be added.
+
+.. code:: ipython2
+
+    fig,ax=plt.subplots() 
+    #from Cowperthwaite
+    tmerg=57982.529
+    
+    obs=np.loadtxt("lc_bol_linear.csv",skiprows=1,delimiter=',')
+    
+    t_obs=obs[:,0]-tmerg
+    lum_obs=obs[:,1]
+    
+    ax.scatter(np.log10(t_obs),np.log10(lum_obs),label="Cowperthwaite et al. 2017",color='b') 
+    for f in [1.e-6]:
+      #compute L0
+      L0=L0_calc(f/f_ref,Mej/Mej_ref,kappa/kappa_e)
+      L=L0*np.sqrt(8*beta/3.)*special.dawsn(np.sqrt(3./(8.*beta))*t/tc)
+    
+      L=np.log10(L)
+    
+      ax.plot(t[0:tc_idx],L[0:tc_idx],color='k',label=r'$\log f = -6$')
+      ax.plot(t[tc_idx:],L[tc_idx:],linestyle='--',color='k')
+      ax.scatter(t[tc_idx],L[tc_idx],color='k')
+    ax.legend(shadow=False, frameon=False,fontsize=10)
+    
+    ax.set_xlim(0,2)
+    ax.set_ylim(38,45)
+    ax.set_xlabel("t [days]")
+    ax.set_ylabel("log L [erg/s]")
+    plt.show()
+
+
+
+.. image:: lipaczynski_model_files/lipaczynski_model_8_0.png
+
+
+As can easily be seen from the above figure, the very simple kilonova
+proposed by LP does not really match the observation. However, what
+happens if we change the decay law from :math:`\tau^{-1}` to
+:math:`\tau^{-1.3}`? Instead of an analytical solution, a numerical
+solution is thus sought. This is easy to implement
+
+.. code:: ipython2
+
+    from scipy.integrate import odeint
+    
+    def RHS(U,t,beta):
+      return -(4./t + 3*t/(4*beta))*U + 1/t**4.3
+    
+    fig,ax=plt.subplots() 
+    ax.scatter(np.log10(t_obs),np.log10(lum_obs),label="Cowperthwaite et al. 2017",color='b') 
+    U=odeint(RHS,1,t,args=(beta,))
+    U=U.transpose()[:][0]
+    
+    f=1.e-6
+    L0=L0_calc(f/f_ref,Mej/Mej_ref,kappa/kappa_e)
+    
+    L=L0*U*t**4#L0*U*t**4
+    
+    L=np.log10(L)
+    ax.plot(t,L,label=r'$g(\tau)=\tau^{-1.3}$')
+    L=L0*np.sqrt(8*beta/3.)*special.dawsn(np.sqrt(3./(8.*beta))*t/tc)
+    L=np.log10(L)
+    
+    ax.plot(t[0:tc_idx],L[0:tc_idx],color='k',label=r'$g(\tau) = \tau^{-1}$')
+    ax.plot(t[tc_idx:],L[tc_idx:],linestyle='--',color='k')
+    ax.legend(shadow=False, frameon=False,fontsize=10)
+    
+    ax.set_xlim(0,2)
+    ax.set_ylim(38,45)
+    ax.set_xlabel("t [days]")
+    ax.set_ylabel("log L [erg/s]")
+    plt.show()
+
+
+
+
+.. image:: lipaczynski_model_files/lipaczynski_model_10_0.png
+
+
+So the effect doesn't change too much. However, this was the first work
+to propose a complete model of the kilonova lightcurve and forms the
+basic template on which future work has been constructed.

@@ -1,0 +1,60 @@
+.. _NU:
+
+Neutrinos
+=========
+
+In this section, the neutrino physics background is discussed.
+
+
+.. toctree::
+  :maxdepth: 1
+
+  nu_mpf.rst
+
+.. _why_nu:
+
+Why do we need neutrinos?
+-------------------------
+
+It is a natural question to ask why neutrinos are important in merger
+simulations and what effect do they play in the post-merger. 
+
+.. _nu_terms:
+
+Neutrino Terminology
+--------------------
+
+Here we define some standard terminology that is useful when discussing 
+neutrino interactions. 
+
+.. table:: Neutrino Terminology
+   :widths: auto
+
+   ======================  ========================================================
+   Symbol                  Meaning
+   ======================  ========================================================
+   :math:`\nu_{e}`         electron neutrino
+   :math:`\bar{\nu}_{e}`   electron antineutrino 
+   :math:`Y_{e}`           electron fraction 
+   :math:`Y_{p}`           proton fraction 
+   :math:`Y_{n}`           neutron fraction 
+   ======================  ========================================================
+
+
+
+
+Types of reactions
+------------------
+
+There are many different types of reactions that neutrinos can undergo.
+
+The main processes that neutrinos undergo are the following
+
+.. math::
+
+  \nu_{e} + n &\rightleftharpoons  e^{-} + p,\\
+  \bar{\nu}_{e} + p &\rightleftharpoons  e^{+} + n.\\
+
+
+
+

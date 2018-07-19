@@ -1,0 +1,15 @@
+Welcome to the Kilonova Book
+============================
+
+.. toctree::
+  :maxdepth: 2
+
+  intro.txt
+  thermodynamics.txt
+  Neutrinos/index.txt
+  Neutrinos/nu_mpf.rst
+  lipaczynski_model.rst
+  Ejecta/index.txt
+  scaling.txt
+
+Note: You can :ref:`search` this documentation.

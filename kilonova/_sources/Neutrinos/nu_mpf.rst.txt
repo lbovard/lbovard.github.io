@@ -1,0 +1,163 @@
+
+Neutrino Mean Free Path in Neutron Stars
+========================================
+
+.. math::
+
+
+   \newcommand{\nue}{\nu_{e}}
+   \newcommand{\nuae}{\bar{\nu}_{e}}
+   \newcommand{\Ye}{Y_\mathrm{e}}
+   \newcommand{\ms}{\,{\rm ms}}
+   \newcommand{\km}{\,{\mathrm{km}}}
+   \newcommand{\MeV}{\,{\mathrm{MeV}}}
+   \newcommand{\gcm}{\,{\mathrm{g}/\mathrm{cm}^{3}}}
+   \newcommand{\Msol}{\, M_{\odot}}
+   \newcommand{\kB}{\, \rm{k_{B}/baryon}}
+
+The **mean free path** :math:`\lambda` is the average distance a
+particle must move before it interacts with another particle. The
+definition of the mean free path is
+
+.. math:: \lambda = \frac{1}{\sigma n},
+
+where :math:`\sigma` is the cross section in :math:`L^{2}` and :math:`n`
+is the number density in :math:`L^{-3}` where :math:`L` is the length
+scale. We are interested in the mean free path in the context of
+neutrino calculations as it tells us roughly where the neutrinos are
+free-streaming, i.e., with :math:`\lambda > 10\km`, versus trapped,
+i.e., with :math:`\lambda < 10 \km`. A value of :math:`10\km` is chosen
+as the threshold as it is roughly the radius of the neutron star and
+represents a natural length scale in the simulations.
+
+In order to calculate the :math:`\lambda` of the neutrinos, we need to
+two pieces of information, the cross section :math:`\sigma` and the
+number density :math:`n`. From above we can see that for all scattering
+processes the following relationship holds
+
+.. math:: \sigma \sim \sigma_{0}\left(\frac{E_{\nu}}{m_{e}c^{2}}\right)^{2},
+
+where :math:`\sigma_{0}\approx 1.705\times 10^{-44}\,\textrm{cm}^{2}` is
+the neutrino cross section and :math:`m_{e}c^{2} \approx 0.511 \MeV` is
+the mass of the electron. Likewise, the number density is defined as
+
+.. math:: n = \frac{\rho}{n_{b}},
+
+where :math:`n_{b} \approx 1.67\times 10^{-24}\, \textrm{g}` is the
+baryonic mass, which we take to be simply the mass of the proton. Using
+the two relations, we can easily derive the expression for the mean free
+path
+
+.. math::
+
+   \lambda_{\nu} \sim 2.56\times 10^{14}
+   \left(\frac{\rho}{1\gcm}\right)^{-1}\left(\frac{E_{\nu}}{1\MeV}\right)^{-2}\, \km.
+
+.. code:: ipython2
+
+    import numpy as np
+    ## set c = 1
+    #mass of the electron
+    me=0.5109989461 #MeV
+    
+    #mass of the proton, which we take to be
+    #the baryonic mass. okay for rough calcs
+    mb=1.672621898e-24 #grams
+    
+    #cross section of the neutrino 
+    sigma0 = 1.705e-44 #cm^2
+    
+    C=me**2 * mb / sigma0 #cm 
+    C/=1e5 #convert to km
+    
+    
+    def free_path(logrho,logE):
+      ''' the mean free path in km'''
+      return (np.log10(C)-2*logE-logrho)
+    
+    E=np.linspace(-2,2,100) #min 0.01 MeV , max 100 MeV
+    rho=np.linspace(2,16,100)
+    
+    print "rho = {:1.2e} g/cm^3 E = {:2.2f} MeV l = {:.2f} km".format(1e14,1e1,10**free_path(14,1))
+    print "rho = {:1.2e} g/cm^3 E = {:2.2f} MeV l = {:.2f} km".format(1e11,np.log10(5),10**free_path(11,np.log10(5)))
+
+
+.. parsed-literal::
+
+    rho = 1.00e+14 g/cm^3 E = 10.00 MeV l = 0.03 km
+    rho = 1.00e+11 g/cm^3 E = 0.70 MeV l = 102.46 km
+
+
+The above shows some typical energies and temperatures reached inside a
+neutron star merger. The complete given picture is given as
+
+.. code:: ipython2
+
+    import matplotlib.pyplot as plt
+    import matplotlib
+    
+    ########################################
+    ###### PLOT SETTINGS ###################
+    ########################################
+    params = {
+        'figure.figsize'    : [10.4, 5.4],
+        'text.usetex'       : True,
+        'xtick.major.size'  : 6,
+        'xtick.minor.size'  : 3,
+        'ytick.major.size'  : 6,
+        'ytick.minor.size'  : 3,
+    }
+    matplotlib.rcParams.update(params) 
+    LabelSize=20
+    ########################################
+    
+    x, y = np.meshgrid(rho,E)
+    fp=free_path(x,y)
+    
+    fig, ax = plt.subplots()
+    cb=ax.pcolormesh(x,y,fp,vmin=-2.0,vmax=10.0,rasterized=True,shading='gourand')
+    ax.plot(rho,(np.log10(C)-1-rho)/2.0,color='white',lw=2.0)
+    ax.set_xlabel(r"$\log \rho \, \rm{[g/cm^{3}]}$",size=LabelSize)
+    ax.set_ylabel(r"$\log \rm{E}_{\nu}\, [MeV]$",size=LabelSize)
+    ax.set_xlim(2,16)
+    ax.set_ylim(-2,2)
+    ax.text(10.5, 1.5, r'$10\, \rm{km}$', rotation=-45,color='white',size=LabelSize)
+    ax.text(14, 1.1, r'$\rm{NS}$',color='white',size=LabelSize)
+    ax.scatter(14,1,color='white')
+    cbar=fig.colorbar(cb)
+    cbar.ax.set_ylabel(r"$\log \lambda_{\nu} \, \rm{[km]}$",size=LabelSize)
+    cbar.ax.tick_params(labelsize=LabelSize)
+    ax.tick_params(length=8, width=1.5, which='major',direction='in',color='white',labelsize=LabelSize)
+    ax.tick_params(length=5, width=1, which='minor',direction='in',color='white',labelsize=LabelSize)
+    ax.minorticks_on()
+    ax.xaxis.set_ticks_position('both')
+    ax.yaxis.set_ticks_position('both')
+    plt.savefig("freepath.pdf",bbox_inches="tight",pad_inches=0.05,format="pdf")
+    plt.show()
+    
+
+
+
+
+.. image:: nu_mpf_files/nu_mpf_3_0.png
+
+
+In the above we plot this mean free path for the densities and neutrino
+energies encountered in neutron star mergers. The white line is the
+typical radius of a neutron star of :math:`10\km` and the dot represents
+the typical values of the density,
+:math:`\rho_{\rm{NS}}\sim 10^{14}\gcm`, and the neutrino energy,
+:math:`E_{\nu}\sim 10\MeV` encountered in the core of the neutron star.
+With these values, we get a typical mean free path of
+:math:`\lambda_{\rm{NS}}\sim 0.026\km` in the core of the neutron star
+which is significantly smaller than that of the neutron star radius, and
+hence the term *trapped*. In contrast, if we consider typical values
+around :math:`\sim 50\km` away from the centre, we have
+:math:`\rho\sim 10^{11}\gcm` and :math:`E_{\nu}\sim 5 \MeV` which gives
+:math:`\lambda \sim 100\km`. As this value is significantly larger than
+the neutron star, the neutrinos are considered to be *free-streaming*.
+The transition from :math:`10^{14}\gcm` to :math:`10^{11}\gcm`, i.e.,
+from trapped to free-streaming, in neutron star mergers occurs over a
+length of :math:`\sim 10\km` which makes implementations of neutrino
+schemes interesting as they need to be able hand this transition
+accurately.

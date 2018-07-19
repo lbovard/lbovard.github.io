@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Neutrino Mean Free Path in Neutron Stars &#8212; Kilonova  documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Original Kilonova Model by Li &amp; Paczyński" href="../lipaczynski_model.html" />
+    <link rel="prev" title="Neutrinos" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lipaczynski_model.html" title="Original Kilonova Model by Li &amp; Paczyński"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Neutrinos"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Kilonova  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Neutrinos</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="neutrino-mean-free-path-in-neutron-stars">
+<h1>Neutrino Mean Free Path in Neutron Stars<a class="headerlink" href="#neutrino-mean-free-path-in-neutron-stars" title="Permalink to this headline">¶</a></h1>
+<div class="math notranslate">
+\[\newcommand{\nue}{\nu_{e}}
+\newcommand{\nuae}{\bar{\nu}_{e}}
+\newcommand{\Ye}{Y_\mathrm{e}}
+\newcommand{\ms}{\,{\rm ms}}
+\newcommand{\km}{\,{\mathrm{km}}}
+\newcommand{\MeV}{\,{\mathrm{MeV}}}
+\newcommand{\gcm}{\,{\mathrm{g}/\mathrm{cm}^{3}}}
+\newcommand{\Msol}{\, M_{\odot}}
+\newcommand{\kB}{\, \rm{k_{B}/baryon}}\]</div>
+<p>The <strong>mean free path</strong> <span class="math notranslate">\(\lambda\)</span> is the average distance a
+particle must move before it interacts with another particle. The
+definition of the mean free path is</p>
+<div class="math notranslate">
+\[\lambda = \frac{1}{\sigma n},\]</div>
+<p>where <span class="math notranslate">\(\sigma\)</span> is the cross section in <span class="math notranslate">\(L^{2}\)</span> and <span class="math notranslate">\(n\)</span>
+is the number density in <span class="math notranslate">\(L^{-3}\)</span> where <span class="math notranslate">\(L\)</span> is the length
+scale. We are interested in the mean free path in the context of
+neutrino calculations as it tells us roughly where the neutrinos are
+free-streaming, i.e., with <span class="math notranslate">\(\lambda &gt; 10\km\)</span>, versus trapped,
+i.e., with <span class="math notranslate">\(\lambda &lt; 10 \km\)</span>. A value of <span class="math notranslate">\(10\km\)</span> is chosen
+as the threshold as it is roughly the radius of the neutron star and
+represents a natural length scale in the simulations.</p>
+<p>In order to calculate the <span class="math notranslate">\(\lambda\)</span> of the neutrinos, we need to
+two pieces of information, the cross section <span class="math notranslate">\(\sigma\)</span> and the
+number density <span class="math notranslate">\(n\)</span>. From above we can see that for all scattering
+processes the following relationship holds</p>
+<div class="math notranslate">
+\[\sigma \sim \sigma_{0}\left(\frac{E_{\nu}}{m_{e}c^{2}}\right)^{2},\]</div>
+<p>where <span class="math notranslate">\(\sigma_{0}\approx 1.705\times 10^{-44}\,\textrm{cm}^{2}\)</span> is
+the neutrino cross section and <span class="math notranslate">\(m_{e}c^{2} \approx 0.511 \MeV\)</span> is
+the mass of the electron. Likewise, the number density is defined as</p>
+<div class="math notranslate">
+\[n = \frac{\rho}{n_{b}},\]</div>
+<p>where <span class="math notranslate">\(n_{b} \approx 1.67\times 10^{-24}\, \textrm{g}\)</span> is the
+baryonic mass, which we take to be simply the mass of the proton. Using
+the two relations, we can easily derive the expression for the mean free
+path</p>
+<div class="math notranslate">
+\[\lambda_{\nu} \sim 2.56\times 10^{14}
+\left(\frac{\rho}{1\gcm}\right)^{-1}\left(\frac{E_{\nu}}{1\MeV}\right)^{-2}\, \km.\]</div>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">## set c = 1</span>
+<span class="c1">#mass of the electron</span>
+<span class="n">me</span><span class="o">=</span><span class="mf">0.5109989461</span> <span class="c1">#MeV</span>
+
+<span class="c1">#mass of the proton, which we take to be</span>
+<span class="c1">#the baryonic mass. okay for rough calcs</span>
+<span class="n">mb</span><span class="o">=</span><span class="mf">1.672621898e-24</span> <span class="c1">#grams</span>
+
+<span class="c1">#cross section of the neutrino</span>
+<span class="n">sigma0</span> <span class="o">=</span> <span class="mf">1.705e-44</span> <span class="c1">#cm^2</span>
+
+<span class="n">C</span><span class="o">=</span><span class="n">me</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">mb</span> <span class="o">/</span> <span class="n">sigma0</span> <span class="c1">#cm</span>
+<span class="n">C</span><span class="o">/=</span><span class="mf">1e5</span> <span class="c1">#convert to km</span>
+
+
+<span class="k">def</span> <span class="nf">free_path</span><span class="p">(</span><span class="n">logrho</span><span class="p">,</span><span class="n">logE</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39; the mean free path in km&#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">logE</span><span class="o">-</span><span class="n">logrho</span><span class="p">)</span>
+
+<span class="n">E</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1">#min 0.01 MeV , max 100 MeV</span>
+<span class="n">rho</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="s2">&quot;rho = </span><span class="si">{:1.2e}</span><span class="s2"> g/cm^3 E = </span><span class="si">{:2.2f}</span><span class="s2"> MeV l = </span><span class="si">{:.2f}</span><span class="s2"> km&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">1e14</span><span class="p">,</span><span class="mf">1e1</span><span class="p">,</span><span class="mi">10</span><span class="o">**</span><span class="n">free_path</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span> <span class="s2">&quot;rho = </span><span class="si">{:1.2e}</span><span class="s2"> g/cm^3 E = </span><span class="si">{:2.2f}</span><span class="s2"> MeV l = </span><span class="si">{:.2f}</span><span class="s2"> km&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">1e11</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="mi">10</span><span class="o">**</span><span class="n">free_path</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">5</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="mf">1.00e+14</span> <span class="n">g</span><span class="o">/</span><span class="n">cm</span><span class="o">^</span><span class="mi">3</span> <span class="n">E</span> <span class="o">=</span> <span class="mf">10.00</span> <span class="n">MeV</span> <span class="n">l</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="n">km</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.00e+11</span> <span class="n">g</span><span class="o">/</span><span class="n">cm</span><span class="o">^</span><span class="mi">3</span> <span class="n">E</span> <span class="o">=</span> <span class="mf">0.70</span> <span class="n">MeV</span> <span class="n">l</span> <span class="o">=</span> <span class="mf">102.46</span> <span class="n">km</span>
+</pre></div>
+</div>
+<p>The above shows some typical energies and temperatures reached inside a
+neutron star merger. The complete given picture is given as</p>
+<div class="code ipython2 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="c1">########################################</span>
+<span class="c1">###### PLOT SETTINGS ###################</span>
+<span class="c1">########################################</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;figure.figsize&#39;</span>    <span class="p">:</span> <span class="p">[</span><span class="mf">10.4</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">],</span>
+    <span class="s1">&#39;text.usetex&#39;</span>       <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;xtick.major.size&#39;</span>  <span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;xtick.minor.size&#39;</span>  <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.major.size&#39;</span>  <span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;ytick.minor.size&#39;</span>  <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">LabelSize</span><span class="o">=</span><span class="mi">20</span>
+<span class="c1">########################################</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span><span class="n">E</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">=</span><span class="n">free_path</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">cb</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">fp</span><span class="p">,</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">2.0</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span><span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">shading</span><span class="o">=</span><span class="s1">&#39;gourand&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rho</span><span class="p">,(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">C</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">rho</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\log \rho \, \rm{[g/cm^</span><span class="si">{3}</span><span class="s2">]}$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\log \rm</span><span class="si">{E}</span><span class="s2">_{\nu}\, [MeV]$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$10\, \rm</span><span class="si">{km}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\rm</span><span class="si">{NS}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cb</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\log \lambda_{\nu} \, \rm{[km]}$&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="n">LabelSize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">minorticks_on</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;freepath.pdf&quot;</span><span class="p">,</span><span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span><span class="n">pad_inches</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/nu_mpf_3_0.png" src="../_images/nu_mpf_3_0.png" />
+<p>In the above we plot this mean free path for the densities and neutrino
+energies encountered in neutron star mergers. The white line is the
+typical radius of a neutron star of <span class="math notranslate">\(10\km\)</span> and the dot represents
+the typical values of the density,
+<span class="math notranslate">\(\rho_{\rm{NS}}\sim 10^{14}\gcm\)</span>, and the neutrino energy,
+<span class="math notranslate">\(E_{\nu}\sim 10\MeV\)</span> encountered in the core of the neutron star.
+With these values, we get a typical mean free path of
+<span class="math notranslate">\(\lambda_{\rm{NS}}\sim 0.026\km\)</span> in the core of the neutron star
+which is significantly smaller than that of the neutron star radius, and
+hence the term <em>trapped</em>. In contrast, if we consider typical values
+around <span class="math notranslate">\(\sim 50\km\)</span> away from the centre, we have
+<span class="math notranslate">\(\rho\sim 10^{11}\gcm\)</span> and <span class="math notranslate">\(E_{\nu}\sim 5 \MeV\)</span> which gives
+<span class="math notranslate">\(\lambda \sim 100\km\)</span>. As this value is significantly larger than
+the neutron star, the neutrinos are considered to be <em>free-streaming</em>.
+The transition from <span class="math notranslate">\(10^{14}\gcm\)</span> to <span class="math notranslate">\(10^{11}\gcm\)</span>, i.e.,
+from trapped to free-streaming, in neutron star mergers occurs over a
+length of <span class="math notranslate">\(\sim 10\km\)</span> which makes implementations of neutrino
+schemes interesting as they need to be able hand this transition
+accurately.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Neutrinos</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../lipaczynski_model.html"
+                        title="next chapter">Original Kilonova Model by Li &amp; Paczyński</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Neutrinos/nu_mpf.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lipaczynski_model.html" title="Original Kilonova Model by Li &amp; Paczyński"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Neutrinos"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Kilonova  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Neutrinos</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Luke Bovard.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0.
+    </div>
+  </body>
+</html>
